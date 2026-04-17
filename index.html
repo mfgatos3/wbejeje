@@ -4,7 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Difracción de Rayos X | Ciencia Interdisciplinaria</title>
-    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script>
+        // Force trailing slash for GitHub Pages to fix relative image paths
+        (function() {
+            var path = window.location.pathname;
+            if (path.indexOf('.') === -1 && path.charAt(path.length - 1) !== '/') {
+                window.location.replace(path + '/' + window.location.search + window.location.hash);
+            }
+        })();
+    </script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <style>
         :root {
@@ -218,7 +226,7 @@
                         </ul>
                     </div>
                     <div class="media-container">
-                        <img src="./diapositiva1.jpg" alt="Pioneros de la Cristalografía" style="max-width: 100%; border-radius: 12px; border: 1px solid var(--border);">
+                        <img src="diapositiva1.jpg" alt="Pioneros de la Cristalografía" style="max-width: 100%; border-radius: 12px; border: 1px solid var(--border);">
                     </div>
                 </div>
 
