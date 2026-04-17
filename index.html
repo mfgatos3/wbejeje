@@ -145,11 +145,28 @@
             nav { flex-direction: column; height: auto; padding: 1rem; }
             .nav-links { margin-top: 1rem; width: 100%; overflow-x: auto; padding-bottom: 0.5rem; }
         }
+
+        /* Modal specific styles added at the end of the original head */
+        @keyframes spin { to { transform: rotate(360deg); } }
+        .question-card {
+            background: #f8fafc;
+            border: 2px solid var(--border);
+            border-radius: 10px;
+            padding: 1rem 1.25rem;
+            cursor: pointer;
+            transition: all 0.2s;
+            font-size: 0.92rem;
+            color: var(--text-main);
+            line-height: 1.5;
+        }
+        .question-card:hover { border-color: var(--secondary); background: #ebf8ff; transform: translateY(-2px); box-shadow: 0 4px 12px rgba(0,0,0,0.08); }
+        .question-card.selected { border-color: var(--secondary); background: #ebf8ff; box-shadow: 0 0 0 3px rgba(43,108,176,0.15); }
+        .feedback-block { background: #f8fafc; border-radius: 10px; padding: 1.25rem 1.5rem; border: 1px solid var(--border); }
+        .feedback-block h4 { font-size:1rem; margin-bottom:0.5rem; }
     </style>
 </head>
 <body>
 
-<!-- Opening Prediction Modal -->
 <div id="prediction-modal" style="position:fixed;inset:0;z-index:9999;display:flex;align-items:center;justify-content:center;background:rgba(10,20,40,0.75);backdrop-filter:blur(4px);padding:1rem;">
     <div style="background:white;border-radius:16px;max-width:600px;width:100%;padding:2.5rem;box-shadow:0 25px 60px rgba(0,0,0,0.3);animation:fadeIn 0.4s ease-out;">
         <div style="text-align:center;margin-bottom:1.5rem;">
@@ -170,16 +187,14 @@
     </div>
 </div>
 
-
     <nav>
         <div class="logo">Cristalografía de Rayos X</div>
         <div class="nav-links">
             <a href="#" class="nav-item active" onclick="showTab(event, 'home')">General</a>
-            <a href="#" class="nav-item" onclick="showTab(event, 'science')">Biología y Química</a>
-            <a href="#" class="nav-item" onclick="showTab(event, 'math')">Física y Matemáticas</a>
+            <a href="#" class="nav-item" onclick="showTab(event, 'interdisciplinary')">Conceptos Interdisciplinares</a>
             <a href="#" class="nav-item" onclick="showTab(event, 'tech')">Aportes</a>
             <a href="#" class="nav-item" onclick="showTab(event, 'simulation')">Simulación</a>
-            <a href="#" class="nav-item" onclick="showTab(event, 'analysis')">Análisis</a>
+            <a href="#" class="nav-item" onclick="showTab(event, 'analysis')">Análisis IA</a>
         </div>
     </nav>
 
@@ -199,7 +214,7 @@
                         <ul>
                             <li><strong>1895 - Wilhelm Röntgen:</strong> Discovers X-rays, although initially he did not know they could be used to study crystals.</li>
                             <li><strong>1912 - Max von Laue:</strong> Had the brilliant idea that if atoms were ordered in a crystal, they would act as a diffraction grid for X-rays. This experiment confirmed both the wave nature of X-rays and the atomic structure of crystals.</li>
-                            <li><strong>1913 - The Braggs (Father and Son):</strong> William Henry and William Lawrence Bragg simplified the complex Laue model by creating the <strong>Bragg's Law</strong>, allowing calculation of real atomic distances.</li>
+                            <li><strong>1913 - The Braggs (Father and Son):</strong> William Henry and William Lawrence Bragg simplified the complex Law model by creating the <strong>Bragg's Law</strong>, allowing calculation of real atomic distances.</li>
                         </ul>
                     </div>
                     <div class="media-container">
@@ -213,7 +228,13 @@
                 </div>
             </div>
         </div>
-        <div id="science" class="tab-content">
+        
+        <div id="interdisciplinary" class="tab-content">
+            <header>
+                <h1>Conceptos Interdisciplinares</h1>
+                <p>Explorando la difracción de rayos X a través de diferentes disciplinas científicas.</p>
+            </header>
+
             <div class="section-card">
                 <h2>Ciencias Biológicas y Químicas</h2>
                 <div class="grid">
@@ -231,31 +252,10 @@
                     </div>
                 </div>
             </div>
-        </div>
-        <div id="tech" class="tab-content">
-            <div class="section-card">
-                <h2>Aportes Tecnológicos y Aplicaciones</h2>
-                <p>La DRX no solo ha sido fundamental para la ciencia básica, sino que también ha impulsado avances tecnológicos en diversos campos.</p>
-                
-                <h3>Medicina</h3>
-                <p>En medicina, la DRX se utiliza para determinar la estructura de proteínas y enzimas, lo que es crucial para el diseño de fármacos. Por ejemplo, la estructura del virus del VIH fue resuelta usando esta técnica, lo que permitió el desarrollo de tratamientos efectivos.</p>
-                
-                <h3>Materiales</h3>
-                <p>En ingeniería de materiales, la DRX ayuda a caracterizar nuevos materiales como superconductores y semiconductores, permitiendo optimizar sus propiedades para aplicaciones específicas.</p>
-            </div>
-        </div>
-        <div id="simulation" class="tab-content">
-            <div class="section-card">
-                <h2>Simulación Interactiva</h2>
-                <p>Próximamente: Una simulación interactiva que permitirá a los usuarios experimentar con la difracción de rayos X, ajustando parámetros como el ángulo de incidencia y la distancia entre planos atómicos para ver cómo afecta el patrón de difracción.</p>
-            </div>
-        
-        </div>
-        <div id="math" class="tab-content">
+
             <div class="section-card">
                 <h2>Física y Fundamentos Matemáticos</h2>
-                <p>Para que ocurra la difracción, la longitud de onda de la radiación debe ser similar a la distancia entre los
-                    átomos.</p>
+                <p>Para que ocurra la difracción, la longitud de onda de la radiación debe ser similar a la distancia entre los átomos.</p>
         
                 <div class="media-container" style="margin-bottom: 2rem; text-align: center;">
                     <img src="../braggs-law-xray-diffraction-crystal-260nw-2287289215.webp" alt="Esquema de la Ley de Bragg" style="max-width: 100%; height: auto; border-radius: 8px;">
@@ -272,8 +272,7 @@
                 <div class="grid">
                     <div class="math-card">
                         <h3>Ley de Bragg</h3>
-                        <p>Es la base matemática que explica cuándo los rayos dispersados por los átomos se refuerzan entre sí
-                            (interferencia constructiva).</p>
+                        <p>Es la base matemática que explica cuándo los rayos dispersados por los átomos se refuerzan entre sí (interferencia constructiva).</p>
                         <div class="math-formula">
                             \( n\lambda = 2d \sin(\theta) \)
                         </div>
@@ -291,8 +290,7 @@
                             <div class="math-formula">
                                 \( \frac{a}{\sin(A)} = \frac{b}{\sin(B)} = \frac{c}{\sin(C)} \)
                             </div>
-                            <p style="font-size: 0.9rem; margin-top: 1rem;">Helps determine bond angles and distances in 3D
-                                space.</p>
+                            <p style="font-size: 0.9rem; margin-top: 1rem;">Helps determine bond angles and distances in 3D space.</p>
                         </div>
                         <div class="math-card">
                             <h3>Law of Cosines</h3>
@@ -300,46 +298,59 @@
                             <div class="math-formula">
                                 \( c^2 = a^2 + b^2 - 2ab \cos(C) \)
                             </div>
-                            <p style="font-size: 0.9rem; margin-top: 1rem;">Used to find the length of bonds when angles are
-                                known.</p>
+                            <p style="font-size: 0.9rem; margin-top: 1rem;">Used to find the length of bonds when angles are known.</p>
                         </div>
                     </div>
         
                 </div>
                 <div class="inferencia23">
                     <h3>Interferencia Constructiva</h3>
-                    <p>Solo cuando se cumple la Ley de Bragg, las ondas que salen del cristal están "en fase" y crean un pico de
-                        intensidad que podemos medir. Si no se cumple, las ondas se anulan entre sí.</p>
+                    <p>Solo cuando se cumple la Ley de Bragg, las ondas que salen del cristal están "en fase" y crean un pico de intensidad que podemos medir. Si no se cumple, las ondas se anulan entre sí.</p>
                     <div class="math-card" style="border-left-color: var(--accent);">
-                        <p><strong>Dato Curioso:</strong> Los rayos X se usan porque su longitud de onda es tan pequeña que
-                            puede interactuar con el espacio vacío entre los átomos.</p>
+                        <p><strong>Dato Curioso:</strong> Los rayos X se usan porque su longitud de onda es tan pequeña que puede interactuar with el espacio vacío entre los átomos.</p>
                     </div>
                 </div>
             </div>
         </div>
+
+        <div id="tech" class="tab-content">
+            <div class="section-card">
+                <h2>Aportes Tecnológicos y Aplicaciones</h2>
+                <p>La DRX no solo ha sido fundamental para la ciencia básica, sino que también ha impulsado avances tecnológicos en diversos campos.</p>
+                
+                <h3>Medicina</h3>
+                <p>En medicina, la DRX se utiliza para determinar la estructura de proteínas y enzimas, lo que es crucial para el diseño de fármacos. Por ejemplo, la estructura del virus del VIH fue resuelta usando esta técnica, lo que permitió el desarrollo de tratamientos efectivos.</p>
+                
+                <h3>Materiales</h3>
+                <p>En ingeniería de materiales, la DRX ayuda a caracterizar nuevos materiales como superconductores y semiconductores, permitiendo optimizar sus propiedades para aplicaciones específicas.</p>
+            </div>
+        </div>
+        <div id="simulation" class="tab-content">
+            <div class="section-card">
+                <h2>Simulación Interactiva</h2>
+                <p>Próximamente: Una simulación interactiva que permitirá a los usuarios experimentar con la difracción de rayos X, ajustando parámetros como el ángulo de incidencia y la distancia entre planos atómicos para ver cómo afecta el patrón de difracción.</p>
+            </div>
+        </div>
+
         <div id="analysis" class="tab-content">
             <div class="section-card">
                 <h2>🔬 Reflexión: Predicción vs. Realidad Atómica</h2>
 
-                <!-- Context banner -->
                 <div style="background:linear-gradient(135deg,#ebf8ff,#e9d8fd); border:1px solid #bee3f8; border-radius:12px; padding:1.5rem 2rem; margin-bottom:2rem;">
                     <h3 style="margin-top:0; color:var(--primary); font-size:1.1rem;">🧠 ¿Qué se pide?</h3>
                     <p style="margin-bottom:0; color:#2d3748;">Ahora que exploraste los datos de difracción, la Ley de Bragg y las estructuras cristalinas, es momento de comparar con tu predicción inicial: <strong>¿en qué se parece o diferencia la realidad atómica de lo que imaginaste?</strong></p>
                 </div>
 
-                <!-- The single question -->
                 <div style="background:#1a365d; border-radius:12px; padding:1.75rem 2rem; margin-bottom:2rem; color:white;">
                     <div style="font-size:0.8rem; letter-spacing:0.1em; text-transform:uppercase; opacity:0.7; margin-bottom:0.6rem;">Pregunta de Reflexión</div>
                     <p style="margin:0; font-size:1.05rem; line-height:1.7; font-weight:500; color:white;">Based on your initial prediction, how does the actual atomic representation differ from what you imagined? Using the diffraction data and mathematical results obtained, justify why the structure of this substance is organized this way. Address any alternative perspectives you had before the simulation.</p>
                 </div>
 
-                <!-- Initial prediction recap -->
                 <div id="prediction-recap" style="display:none; background:#f0fff4; border:1px solid #9ae6b4; border-radius:10px; padding:1.25rem 1.5rem; margin-bottom:1.5rem;">
                     <div style="font-size:0.8rem; font-weight:700; color:#276749; text-transform:uppercase; letter-spacing:0.05em; margin-bottom:0.5rem;">📝 Tu predicción inicial</div>
                     <p id="prediction-recap-text" style="margin:0; color:#2d3748; font-style:italic;"></p>
                 </div>
 
-                <!-- API Key Input -->
                 <div id="api-key-section" style="margin-bottom:2rem;">
                     <label for="gemini-api-key" style="font-weight:600; color:var(--primary); display:block; margin-bottom:0.5rem;">🔑 Ingresa tu API Key de Gemini</label>
                     <div style="display:flex; gap:0.75rem; align-items:center; flex-wrap:wrap;">
@@ -349,7 +360,6 @@
                     <p id="api-key-status" style="margin-top:0.5rem; font-size:0.85rem; color:var(--text-muted);"></p>
                 </div>
 
-                <!-- Answer Area -->
                 <div id="answer-section">
                     <label style="font-weight:600; color:var(--primary); display:block; margin-bottom:0.5rem;">✍️ Tu reflexión:</label>
                     <textarea id="student-answer" placeholder="Describe cómo imaginabas la estructura atómica antes, cómo es en realidad según los datos de difracción, y por qué crees que se organiza así. Menciona la Ley de Bragg u otros conceptos matemáticos vistos..." rows="8" style="width:100%; padding:1rem; border:1px solid var(--border); border-radius:8px; font-size:0.95rem; font-family:inherit; line-height:1.6; resize:vertical; outline:none; transition:border 0.2s;" onfocus="this.style.borderColor='var(--secondary)'" onblur="this.style.borderColor='var(--border)'"></textarea>
@@ -363,13 +373,11 @@
                     </div>
                 </div>
 
-                <!-- Loading -->
                 <div id="analysis-loading" style="display:none; text-align:center; padding:3rem 1rem;">
                     <div style="display:inline-block; width:48px; height:48px; border:4px solid var(--border); border-top-color:var(--secondary); border-radius:50%; animation:spin 0.9s linear infinite;"></div>
                     <p style="margin-top:1rem; color:var(--text-muted); font-weight:500;">Gemini está evaluando tu reflexión...</p>
                 </div>
 
-                <!-- Results -->
                 <div id="analysis-result" style="display:none; margin-top:2rem;">
                     <div style="text-align:center; margin-bottom:2rem;">
                         <div id="score-circle" style="display:inline-flex; flex-direction:column; align-items:center; justify-content:center; width:130px; height:130px; border-radius:50%; border:6px solid #ccc; margin-bottom:0.75rem; transition:border-color 0.5s;">
@@ -386,30 +394,10 @@
                     </div>
                 </div>
 
-                <!-- Error -->
                 <div id="analysis-error" style="display:none; margin-top:1.5rem; background:#fff5f5; border:1px solid #fed7d7; border-radius:8px; padding:1.25rem; color:#c53030;"></div>
             </div>
         </div>
     </main>
-
-    <style>
-        @keyframes spin { to { transform: rotate(360deg); } }
-        .question-card {
-            background: #f8fafc;
-            border: 2px solid var(--border);
-            border-radius: 10px;
-            padding: 1rem 1.25rem;
-            cursor: pointer;
-            transition: all 0.2s;
-            font-size: 0.92rem;
-            color: var(--text-main);
-            line-height: 1.5;
-        }
-        .question-card:hover { border-color: var(--secondary); background: #ebf8ff; transform: translateY(-2px); box-shadow: 0 4px 12px rgba(0,0,0,0.08); }
-        .question-card.selected { border-color: var(--secondary); background: #ebf8ff; box-shadow: 0 0 0 3px rgba(43,108,176,0.15); }
-        .feedback-block { background: #f8fafc; border-radius: 10px; padding: 1.25rem 1.5rem; border: 1px solid var(--border); }
-        .feedback-block h4 { font-size:1rem; margin-bottom:0.5rem; }
-    </style>
 
     <script>
         // ---- State ----
@@ -482,7 +470,7 @@ Evalúa y responde ÚNICAMENTE con un objeto JSON válido (sin markdown, sin exp
 
             try {
                 const response = await fetch(
-                    `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-lite:generateContent?key=${savedApiKey}`,
+                    `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${savedApiKey}`,
                     {
                         method: 'POST',
                         headers: { 'Content-Type': 'application/json' },
@@ -587,13 +575,7 @@ Evalúa y responde ÚNICAMENTE con un objeto JSON válido (sin markdown, sin exp
             document.getElementById('analysis-error').style.display = 'none';
             document.getElementById('student-answer').focus();
         }
-    </script>
 
-    <footer>
-        &copy; 2026 Proyecto de Ciencia Interdisciplinaria | Basado en principios de Difracción de Rayos X
-    </footer>
-
-    <script>
         function showTab(event, tabId) {
             event.preventDefault();
             document.querySelectorAll('.tab-content').forEach(tab => tab.classList.remove('active'));
@@ -603,5 +585,9 @@ Evalúa y responde ÚNICAMENTE con un objeto JSON válido (sin markdown, sin exp
             window.scrollTo({ top: 0, behavior: 'smooth' });
         }
     </script>
+
+    <footer>
+        &copy; 2026 Proyecto de Ciencia Interdisciplinaria | Basado en principios de Difracción de Rayos X
+    </footer>
 </body>
 </html>
