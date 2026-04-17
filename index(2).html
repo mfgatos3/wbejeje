@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Difracción de Rayos X | Ciencia Interdisciplinaria</title>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        :root {
+            --primary: #1a365d;
+            --secondary: #2b6cb0;
+            --accent: #ed8936;
+            --bg: #f7fafc;
+            --card-bg: #ffffff;
+            --text-main: #2d3748;
+            --text-muted: #718096;
+            --border: #e2e8f0;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            background-color: var(--bg);
+            color: var(--text-main);
+            line-height: 1.6;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        nav {
+            background-color: var(--primary);
+            color: white;
+            padding: 0 2rem;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .logo { font-weight: 700; font-size: 1.25rem; letter-spacing: -0.025em; }
+
+        .nav-links { display: flex; gap: 1rem; height: 100%; }
+
+        .nav-item {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            padding: 0 1rem;
+            display: flex;
+            align-items: center;
+            transition: all 0.2s;
+            font-size: 0.95rem;
+            font-weight: 500;
+            border-bottom: 3px solid transparent;
+        }
+
+        .nav-item:hover { color: white; background: rgba(255,255,255,0.05); }
+        .nav-item.active { color: white; border-bottom-color: var(--accent); background: rgba(255,255,255,0.1); }
+
+        main { flex: 1; max-width: 1200px; margin: 2rem auto; padding: 0 2rem; width: 100%; }
+
+        header { text-align: center; margin-bottom: 3rem; }
+        header h1 { font-size: 2.5rem; color: var(--primary); margin-bottom: 0.5rem; }
+        header p { color: var(--text-muted); font-size: 1.1rem; }
+
+        .tab-content { display: none; animation: fadeIn 0.4s ease-out; }
+        .tab-content.active { display: block; }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .section-card {
+            background: var(--card-bg);
+            border-radius: 12px;
+            padding: 2.5rem;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05);
+            border: 1px solid var(--border);
+            margin-bottom: 2rem;
+        }
+
+        h2 { font-size: 1.875rem; color: var(--primary); margin-bottom: 1.5rem; display: flex; align-items: center; gap: 0.75rem; }
+        h3 { font-size: 1.25rem; color: var(--secondary); margin: 1.5rem 0 0.75rem; }
+        p { margin-bottom: 1.25rem; text-align: justify; color: #4a5568; }
+        ul { margin-left: 1.5rem; margin-bottom: 1.25rem; color: #4a5568; }
+        li { margin-bottom: 0.5rem; }
+
+        .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center; }
+
+        .media-container { background: #f8fafc; border: 1px solid var(--border); border-radius: 8px; overflow: hidden; }
+        .placeholder {
+            height: 350px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #edf2f7 0%, #e2e8f0 100%);
+            color: var(--text-muted);
+            font-weight: 500;
+            text-align: center;
+            padding: 2rem;
+        }
+
+        .math-card {
+            background: #fdfdfd;
+            border-left: 4px solid var(--secondary);
+            padding: 1.5rem;
+            margin: 1rem 0;
+            border-radius: 0 8px 8px 0;
+            box-shadow: inset 0 0 10px rgba(0,0,0,0.02);
+        }
+
+        .math-formula {
+            font-size: 1.3rem;
+            color: var(--primary);
+            text-align: center;
+            margin: 1.5rem 0;
+            padding: 1.5rem;
+            background: #f1f5f9;
+            border-radius: 8px;
+            font-family: 'Times New Roman', Times, serif;
+        }
+
+        .highlight-box {
+            background: #ebf8ff;
+            border-radius: 8px;
+            padding: 1.5rem;
+            border: 1px solid #bee3f8;
+            margin: 1rem 0;
+        }
+
+        .highlight-box strong { color: var(--primary); }
+
+        footer { margin-top: auto; padding: 2rem; text-align: center; color: var(--text-muted); font-size: 0.875rem; border-top: 1px solid var(--border); }
+
+        @media (max-width: 968px) {
+            .grid { grid-template-columns: 1fr; gap: 2rem; }
+            nav { flex-direction: column; height: auto; padding: 1rem; }
+            .nav-links { margin-top: 1rem; width: 100%; overflow-x: auto; padding-bottom: 0.5rem; }
+        }
+
+        /* Modal specific styles added at the end of the original head */
+        @keyframes spin { to { transform: rotate(360deg); } }
+        .question-card {
+            background: #f8fafc;
+            border: 2px solid var(--border);
+            border-radius: 10px;
+            padding: 1rem 1.25rem;
+            cursor: pointer;
+            transition: all 0.2s;
+            font-size: 0.92rem;
+            color: var(--text-main);
+            line-height: 1.5;
+        }
+        .question-card:hover { border-color: var(--secondary); background: #ebf8ff; transform: translateY(-2px); box-shadow: 0 4px 12px rgba(0,0,0,0.08); }
+        .question-card.selected { border-color: var(--secondary); background: #ebf8ff; box-shadow: 0 0 0 3px rgba(43,108,176,0.15); }
+        .feedback-block { background: #f8fafc; border-radius: 10px; padding: 1.25rem 1.5rem; border: 1px solid var(--border); }
+        .feedback-block h4 { font-size:1rem; margin-bottom:0.5rem; }
+    </style>
+</head>
+<body>
+
+<div id="prediction-modal" style="position:fixed;inset:0;z-index:9999;display:flex;align-items:center;justify-content:center;background:rgba(10,20,40,0.75);backdrop-filter:blur(4px);padding:1rem;">
+    <div style="background:white;border-radius:16px;max-width:600px;width:100%;padding:2.5rem;box-shadow:0 25px 60px rgba(0,0,0,0.3);animation:fadeIn 0.4s ease-out;">
+        <div style="text-align:center;margin-bottom:1.5rem;">
+            <div style="font-size:2.5rem;margin-bottom:0.5rem;">⚛️</div>
+            <h2 style="font-size:1.5rem;color:#1a365d;margin:0 0 0.5rem;">Before we begin...</h2>
+            <p style="color:#718096;font-size:0.95rem;margin:0;">Take a moment to think about this before exploring the site.</p>
+        </div>
+        <div style="background:linear-gradient(135deg,#ebf8ff,#e9d8fd);border-radius:10px;padding:1.25rem 1.5rem;margin-bottom:1.5rem;border:1px solid #bee3f8;">
+            <p style="color:#1a365d;font-weight:600;margin:0 0 0.5rem;font-size:0.9rem;text-transform:uppercase;letter-spacing:0.05em;">🤔 Quick Context</p>
+            <p style="color:#2d3748;margin:0;line-height:1.6;font-size:0.97rem;">X-ray crystallography lets scientists "see" how atoms are arranged inside materials — without ever touching a single atom. Before you explore how this actually works, we want to know: <strong>what do you think atoms look like and how do you imagine they are organized inside a solid material?</strong></p>
+        </div>
+        <label style="font-weight:600;color:#1a365d;display:block;margin-bottom:0.5rem;font-size:0.95rem;">✍️ Describe your mental image:</label>
+        <textarea id="initial-prediction" placeholder="e.g. I think atoms look like tiny balls arranged in neat rows, or maybe randomly scattered... I imagine they are held together by..." rows="5" style="width:100%;padding:1rem;border:1.5px solid #e2e8f0;border-radius:8px;font-size:0.93rem;font-family:inherit;line-height:1.6;resize:vertical;outline:none;transition:border 0.2s;box-sizing:border-box;" onfocus="this.style.borderColor='#2b6cb0'" onblur="this.style.borderColor='#e2e8f0'"></textarea>
+        <p style="font-size:0.8rem;color:#a0aec0;margin:0.4rem 0 1.25rem;">There are no wrong answers — this is just your honest first impression!</p>
+        <button onclick="closePredictionModal()" style="width:100%;padding:0.85rem;background:#1a365d;color:white;border:none;border-radius:10px;font-weight:700;font-size:1rem;cursor:pointer;transition:background 0.2s;" onmouseover="this.style.background='#2b6cb0'" onmouseout="this.style.background='#1a365d'">
+            Let's explore! →
+        </button>
+    </div>
+</div>
+
+    <nav>
+        <div class="logo">Cristalografía de Rayos X</div>
+        <div class="nav-links">
+            <a href="#" class="nav-item active" onclick="showTab(event, 'home')">General</a>
+            <a href="#" class="nav-item" onclick="showTab(event, 'interdisciplinary')">Conceptos Interdisciplinares</a>
+            <a href="#" class="nav-item" onclick="showTab(event, 'tech')">Aportes</a>
+            <a href="#" class="nav-item" onclick="showTab(event, 'simulation')">Simulación</a>
+            <a href="#" class="nav-item" onclick="showTab(event, 'analysis')">Análisis IA</a>
+        </div>
+    </nav>
+
+    <main>
+        <div id="home" class="tab-content active">
+            <header>
+                <h1>History and Discovery</h1>
+            </header>
+            
+            <div class="section-card">
+                <h2>The Origin of a Revolution</h2>
+                <div class="grid">
+                    <div>
+                        <p>The path toward X-ray diffraction began at the end of the 19th century and the beginning of the 20th. It was not a single discovery, but a chain of brilliance that allowed "seeing" for the first time the atomic structure of materials.</p>
+                        
+                        <h3>Fundamental Actors</h3>
+                        <ul>
+                            <li><strong>1895 - Wilhelm Röntgen:</strong> Discovers X-rays, although initially he did not know they could be used to study crystals.</li>
+                            <li><strong>1912 - Max von Laue:</strong> Had the brilliant idea that if atoms were ordered in a crystal, they would act as a diffraction grid for X-rays. This experiment confirmed both the wave nature of X-rays and the atomic structure of crystals.</li>
+                            <li><strong>1913 - The Braggs (Father and Son):</strong> William Henry and William Lawrence Bragg simplified the complex Law model by creating the <strong>Bragg's Law</strong>, allowing calculation of real atomic distances.</li>
+                        </ul>
+                    </div>
+                    <div class="media-container">
+                        <img src="../codigo/diapositiva1.jpg" alt="Pioneros de la Cristalografía" style="max-width: 100%; border-radius: 12px; border: 1px solid var(--border);">
+                    </div>
+                </div>
+
+                <div class="highlight-box" style="margin-top: 2rem;">
+                    <h3>Fundamentals of Physics</h3>
+                    <p>The technique takes advantage of the fact that the wavelength of X-rays is comparable to the space between atoms in a crystal. When X-rays interact with electrons, an elastic scattering process occurs. The constructive interference of these waves, described by Bragg's law, allows obtaining information about the ordered arrangement of atoms</p>
+                </div>
+            </div>
+        </div>
+        
+        <div id="interdisciplinary" class="tab-content">
+            <header>
+                <h1>Conceptos Interdisciplinares</h1>
+                <p>Explorando la difracción de rayos X a través de diferentes disciplinas científicas.</p>
+            </header>
+
+            <div class="section-card">
+                <h2>Ciencias Biológicas y Químicas</h2>
+                <div class="grid">
+                    <div>
+                        <h3>La Estructura de la Vida</h3>
+                        <p>En biología, la DRX fue la clave para resolver el misterio del ADN. Al cristalizar moléculas biológicas, los científicos pueden determinar la posición de cada átomo.</p>
+                        
+                        <h3>Diferenciación de Fases</h3>
+                        <p>Químicamente, la DRX puede distinguir entre sustancias con la misma composición pero distinta estructura (polimorfismo). Por ejemplo, puede diferenciar entre el <strong>grafito</strong> y el <strong>diamante</strong>, ambos formados solo por carbono, pero con propiedades radicalmente distintas debido a su ordenamiento atómico.</p>
+                    </div>
+                    <div class="media-container">
+                        <div class="placeholder">
+                            [Visualización: Átomos de Carbono en Grafito vs Diamante]
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section-card">
+                <h2>Física y Fundamentos Matemáticos</h2>
+                <p>Para que ocurra la difracción, la longitud de onda de la radiación debe ser similar a la distancia entre los átomos.</p>
+        
+                <div class="media-container" style="margin-bottom: 2rem; text-align: center;">
+                    <img src="../braggs-law-xray-diffraction-crystal-260nw-2287289215.webp" alt="Esquema de la Ley de Bragg" style="max-width: 100%; height: auto; border-radius: 8px;">
+                </div>
+
+                <div class="math-card" style="border-left-color: var(--accent); margin: 2rem 0; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);">
+                    <h3 style="text-align: center;">Fórmula de la Distancia Interplanar ($d$)</h3>
+                    <div class="math-formula">
+                        \( d_{hkl} = \frac{a}{\sqrt{h^2 + k^2 + l^2}} \)
+                    </div>
+                    <p style="text-align: center; margin-bottom: 0;">Esta fórmula relaciona el espaciado <strong>d</strong> entre planos cristalinos paralelos con los índices de Miller <strong>(h, k, l)</strong> y el parámetro de red <strong>a</strong> en sistemas cúbicos.</p>
+                </div>
+
+                <div class="grid">
+                    <div class="math-card">
+                        <h3>Ley de Bragg</h3>
+                        <p>Es la base matemática que explica cuándo los rayos dispersados por los átomos se refuerzan entre sí (interferencia constructiva).</p>
+                        <div class="math-formula">
+                            \( n\lambda = 2d \sin(\theta) \)
+                        </div>
+                        <ul>
+                            <li><strong>n:</strong> Orden de reflexión (entero).</li>
+                            <li><strong>λ:</strong> Longitud de onda de los rayos X.</li>
+                            <li><strong>d:</strong> Distancia entre planos atómicos.</li>
+                            <li><strong>θ:</strong> Ángulo de incidencia.</li>
+                        </ul>
+                    </div>
+                    <div class="media-container">
+                        <div class="math-card">
+                            <h3>Law of Sines</h3>
+                            <p>Used in molecular geometry calculations.</p>
+                            <div class="math-formula">
+                                \( \frac{a}{\sin(A)} = \frac{b}{\sin(B)} = \frac{c}{\sin(C)} \)
+                            </div>
+                            <p style="font-size: 0.9rem; margin-top: 1rem;">Helps determine bond angles and distances in 3D space.</p>
+                        </div>
+                        <div class="math-card">
+                            <h3>Law of Cosines</h3>
+                            <p>Essential for calculating distances in non-right triangles.</p>
+                            <div class="math-formula">
+                                \( c^2 = a^2 + b^2 - 2ab \cos(C) \)
+                            </div>
+                            <p style="font-size: 0.9rem; margin-top: 1rem;">Used to find the length of bonds when angles are known.</p>
+                        </div>
+                    </div>
+        
+                </div>
+                <div class="inferencia23">
+                    <h3>Interferencia Constructiva</h3>
+                    <p>Solo cuando se cumple la Ley de Bragg, las ondas que salen del cristal están "en fase" y crean un pico de intensidad que podemos medir. Si no se cumple, las ondas se anulan entre sí.</p>
+                    <div class="math-card" style="border-left-color: var(--accent);">
+                        <p><strong>Dato Curioso:</strong> Los rayos X se usan porque su longitud de onda es tan pequeña que puede interactuar with el espacio vacío entre los átomos.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="tech" class="tab-content">
+            <div class="section-card">
+                <h2>Aportes Tecnológicos y Aplicaciones</h2>
+                <p>La DRX no solo ha sido fundamental para la ciencia básica, sino que también ha impulsado avances tecnológicos en diversos campos.</p>
+                
+                <h3>Medicina</h3>
+                <p>En medicina, la DRX se utiliza para determinar la estructura de proteínas y enzimas, lo que es crucial para el diseño de fármacos. Por ejemplo, la estructura del virus del VIH fue resuelta usando esta técnica, lo que permitió el desarrollo de tratamientos efectivos.</p>
+                
+                <h3>Materiales</h3>
+                <p>En ingeniería de materiales, la DRX ayuda a caracterizar nuevos materiales como superconductores y semiconductores, permitiendo optimizar sus propiedades para aplicaciones específicas.</p>
+            </div>
+        </div>
+        <div id="simulation" class="tab-content">
+            <div class="section-card">
+                <h2>Simulación Interactiva</h2>
+                <p>Próximamente: Una simulación interactiva que permitirá a los usuarios experimentar con la difracción de rayos X, ajustando parámetros como el ángulo de incidencia y la distancia entre planos atómicos para ver cómo afecta el patrón de difracción.</p>
+            </div>
+        </div>
+
+        <div id="analysis" class="tab-content">
+            <div class="section-card">
+                <h2>🔬 Reflexión: Predicción vs. Realidad Atómica</h2>
+
+                <div style="background:linear-gradient(135deg,#ebf8ff,#e9d8fd); border:1px solid #bee3f8; border-radius:12px; padding:1.5rem 2rem; margin-bottom:2rem;">
+                    <h3 style="margin-top:0; color:var(--primary); font-size:1.1rem;">🧠 ¿Qué se pide?</h3>
+                    <p style="margin-bottom:0; color:#2d3748;">Ahora que exploraste los datos de difracción, la Ley de Bragg y las estructuras cristalinas, es momento de comparar con tu predicción inicial: <strong>¿en qué se parece o diferencia la realidad atómica de lo que imaginaste?</strong></p>
+                </div>
+
+                <div style="background:#1a365d; border-radius:12px; padding:1.75rem 2rem; margin-bottom:2rem; color:white;">
+                    <div style="font-size:0.8rem; letter-spacing:0.1em; text-transform:uppercase; opacity:0.7; margin-bottom:0.6rem;">Pregunta de Reflexión</div>
+                    <p style="margin:0; font-size:1.05rem; line-height:1.7; font-weight:500; color:white;">Based on your initial prediction, how does the actual atomic representation differ from what you imagined? Using the diffraction data and mathematical results obtained, justify why the structure of this substance is organized this way. Address any alternative perspectives you had before the simulation.</p>
+                </div>
+
+                <div id="prediction-recap" style="display:none; background:#f0fff4; border:1px solid #9ae6b4; border-radius:10px; padding:1.25rem 1.5rem; margin-bottom:1.5rem;">
+                    <div style="font-size:0.8rem; font-weight:700; color:#276749; text-transform:uppercase; letter-spacing:0.05em; margin-bottom:0.5rem;">📝 Tu predicción inicial</div>
+                    <p id="prediction-recap-text" style="margin:0; color:#2d3748; font-style:italic;"></p>
+                </div>
+
+                <div id="api-key-section" style="margin-bottom:2rem;">
+                    <label for="gemini-api-key" style="font-weight:600; color:var(--primary); display:block; margin-bottom:0.5rem;">🔑 Ingresa tu API Key de Gemini</label>
+                    <div style="display:flex; gap:0.75rem; align-items:center; flex-wrap:wrap;">
+                        <input type="password" id="gemini-api-key" placeholder="AIza..." style="flex:1; min-width:260px; padding:0.65rem 1rem; border:1px solid var(--border); border-radius:8px; font-size:0.95rem; outline:none; transition:border 0.2s;" onfocus="this.style.borderColor='var(--secondary)'" onblur="this.style.borderColor='var(--border)'">
+                        <button onclick="saveApiKey()" style="padding:0.65rem 1.25rem; background:var(--secondary); color:white; border:none; border-radius:8px; font-weight:600; cursor:pointer; transition:background 0.2s;" onmouseover="this.style.background='var(--primary)'" onmouseout="this.style.background='var(--secondary)'">Guardar</button>
+                    </div>
+                    <p id="api-key-status" style="margin-top:0.5rem; font-size:0.85rem; color:var(--text-muted);"></p>
+                </div>
+
+                <div id="answer-section">
+                    <label style="font-weight:600; color:var(--primary); display:block; margin-bottom:0.5rem;">✍️ Tu reflexión:</label>
+                    <textarea id="student-answer" placeholder="Describe cómo imaginabas la estructura atómica antes, cómo es en realidad según los datos de difracción, y por qué crees que se organiza así. Menciona la Ley de Bragg u otros conceptos matemáticos vistos..." rows="8" style="width:100%; padding:1rem; border:1px solid var(--border); border-radius:8px; font-size:0.95rem; font-family:inherit; line-height:1.6; resize:vertical; outline:none; transition:border 0.2s;" onfocus="this.style.borderColor='var(--secondary)'" onblur="this.style.borderColor='var(--border)'"></textarea>
+                    <div style="display:flex; gap:1rem; margin-top:1rem; flex-wrap:wrap;">
+                        <button onclick="analyzeAnswer()" id="analyze-btn" style="padding:0.75rem 2rem; background:var(--accent); color:white; border:none; border-radius:8px; font-weight:700; font-size:1rem; cursor:pointer; transition:all 0.2s;" onmouseover="this.style.background='#dd6b20'" onmouseout="this.style.background='var(--accent)'">
+                            ✨ Analizar con Gemini
+                        </button>
+                        <button onclick="clearAnswer()" style="padding:0.75rem 1.25rem; background:transparent; color:var(--text-muted); border:1px solid var(--border); border-radius:8px; font-weight:600; cursor:pointer;">
+                            Limpiar
+                        </button>
+                    </div>
+                </div>
+
+                <div id="analysis-loading" style="display:none; text-align:center; padding:3rem 1rem;">
+                    <div style="display:inline-block; width:48px; height:48px; border:4px solid var(--border); border-top-color:var(--secondary); border-radius:50%; animation:spin 0.9s linear infinite;"></div>
+                    <p style="margin-top:1rem; color:var(--text-muted); font-weight:500;">Gemini está evaluando tu reflexión...</p>
+                </div>
+
+                <div id="analysis-result" style="display:none; margin-top:2rem;">
+                    <div style="text-align:center; margin-bottom:2rem;">
+                        <div id="score-circle" style="display:inline-flex; flex-direction:column; align-items:center; justify-content:center; width:130px; height:130px; border-radius:50%; border:6px solid #ccc; margin-bottom:0.75rem; transition:border-color 0.5s;">
+                            <span id="score-number" style="font-size:2.5rem; font-weight:800; color:var(--primary);"></span>
+                            <span style="font-size:0.85rem; color:var(--text-muted); font-weight:500;">/ 10</span>
+                        </div>
+                        <div id="score-label" style="font-size:1.1rem; font-weight:700;"></div>
+                    </div>
+                    <div id="feedback-content" style="display:grid; gap:1.25rem;"></div>
+                    <div style="text-align:center; margin-top:2rem;">
+                        <button onclick="resetAnalysis()" style="padding:0.65rem 1.75rem; background:var(--secondary); color:white; border:none; border-radius:8px; font-weight:600; cursor:pointer;">
+                            🔄 Nueva reflexión
+                        </button>
+                    </div>
+                </div>
+
+                <div id="analysis-error" style="display:none; margin-top:1.5rem; background:#fff5f5; border:1px solid #fed7d7; border-radius:8px; padding:1.25rem; color:#c53030;"></div>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        // ---- State ----
+        let savedApiKey = '';
+        let initialPrediction = '';
+
+        const THE_QUESTION = "Based on your initial prediction, how does the actual atomic representation differ from what you imagined? Using the diffraction data and mathematical results obtained, justify why the structure of this substance is organized this way. Address any alternative perspectives you had before the simulation.";
+
+        // ---- Opening Modal ----
+        function closePredictionModal() {
+            const pred = document.getElementById('initial-prediction').value.trim();
+            initialPrediction = pred;
+            document.getElementById('prediction-modal').style.display = 'none';
+            if (pred.length > 0) {
+                document.getElementById('prediction-recap-text').textContent = pred;
+                document.getElementById('prediction-recap').style.display = 'block';
+            }
+        }
+
+        function saveApiKey() {
+            const key = document.getElementById('gemini-api-key').value.trim();
+            if (!key || !key.startsWith('AIza')) {
+                document.getElementById('api-key-status').textContent = '⚠️ Ingresa una API key válida (debe comenzar con "AIza").';
+                document.getElementById('api-key-status').style.color = '#c53030';
+                return;
+            }
+            savedApiKey = key;
+            document.getElementById('api-key-status').textContent = '✅ API key guardada correctamente.';
+            document.getElementById('api-key-status').style.color = '#276749';
+        }
+
+        async function analyzeAnswer() {
+            if (!savedApiKey) {
+                showError('⚠️ Primero guarda tu API key de Gemini.');
+                return;
+            }
+            const answer = document.getElementById('student-answer').value.trim();
+            if (answer.length < 30) {
+                showError('⚠️ Tu reflexión es muy corta. Escribe una explicación más completa comparando tu predicción con la realidad atómica.');
+                return;
+            }
+
+            document.getElementById('analysis-loading').style.display = 'block';
+            document.getElementById('analysis-result').style.display = 'none';
+            document.getElementById('analysis-error').style.display = 'none';
+            document.getElementById('analyze-btn').disabled = true;
+
+            const predictionContext = initialPrediction
+                ? `PREDICCIÓN INICIAL DEL ESTUDIANTE (escrita antes de explorar el sitio): ${initialPrediction}\n\n`
+                : '';
+
+            const prompt = `Eres un profesor experto en cristalografía y difracción de rayos X. Evalúa la siguiente reflexión de un estudiante que acaba de explorar una web sobre difracción de rayos X.
+
+PREGUNTA: ${THE_QUESTION}
+
+${predictionContext}REFLEXIÓN DEL ESTUDIANTE: ${answer}
+
+El estudiante debe: (1) comparar su imagen mental previa de los átomos con la realidad estructural revelada por la difracción, (2) usar datos o conceptos matemáticos como la Ley de Bragg o los índices de Miller para justificar la organización atómica, y (3) reconocer perspectivas alternativas que tenía antes.
+
+Evalúa y responde ÚNICAMENTE con un objeto JSON válido (sin markdown, sin explicaciones extra) con esta estructura exacta:
+{
+  "score": <número del 0 al 10, puede tener un decimal>,
+  "nivel": "<Excelente|Muy Bueno|Bueno|Regular|Insuficiente>",
+  "resumen": "<2-3 oraciones resumiendo la calidad de la reflexión>",
+  "fortalezas": ["<fortaleza 1>", "<fortaleza 2>"],
+  "mejoras": ["<área de mejora 1>", "<área de mejora 2>"],
+  "conceptos_clave_faltantes": ["<concepto faltante, o dejar vacío si no faltan>"],
+  "retroalimentacion_detallada": "<párrafo de 3-5 oraciones con retroalimentación pedagógica profunda sobre la comparación predicción-realidad>"
+}`;
+
+            try {
+                const response = await fetch(
+                    `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${savedApiKey}`,
+                    {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({
+                            contents: [{ parts: [{ text: prompt }] }],
+                            generationConfig: { temperature: 0.3, maxOutputTokens: 2048 }
+                        })
+                    }
+                );
+
+                const data = await response.json();
+
+                if (!response.ok) {
+                    const msg = data.error?.message || `Error HTTP ${response.status}`;
+                    const status = data.error?.status || '';
+                    throw new Error(`[${response.status} ${status}] ${msg}`);
+                }
+
+                const raw = data.candidates?.[0]?.content?.parts?.[0]?.text || '';
+                if (!raw) throw new Error('Gemini no devolvió contenido. Intenta de nuevo.');
+                const cleaned = raw.replace(/```json|```/g, '').trim();
+                let result;
+                try { result = JSON.parse(cleaned); }
+                catch(e) { throw new Error('No se pudo parsear la respuesta de Gemini. Intenta de nuevo.'); }
+                renderResult(result);
+
+            } catch (err) {
+                showError('❌ Error al conectar con Gemini: ' + err.message);
+            } finally {
+                document.getElementById('analysis-loading').style.display = 'none';
+                document.getElementById('analyze-btn').disabled = false;
+            }
+        }
+
+        function renderResult(r) {
+            const score = parseFloat(r.score);
+            const circle = document.getElementById('score-circle');
+            const scoreColors = score >= 8.5 ? '#276749' : score >= 7 ? '#2b6cb0' : score >= 5 ? '#d69e2e' : '#c53030';
+            const scoreBg = score >= 8.5 ? '#f0fff4' : score >= 7 ? '#ebf8ff' : score >= 5 ? '#fffff0' : '#fff5f5';
+
+            circle.style.borderColor = scoreColors;
+            circle.style.background = scoreBg;
+            document.getElementById('score-number').textContent = score % 1 === 0 ? score : score.toFixed(1);
+            document.getElementById('score-number').style.color = scoreColors;
+
+            const levelEmojis = { 'Excelente': '🏆', 'Muy Bueno': '⭐', 'Bueno': '👍', 'Regular': '📖', 'Insuficiente': '💪' };
+            document.getElementById('score-label').textContent = `${levelEmojis[r.nivel] || '📊'} ${r.nivel}`;
+            document.getElementById('score-label').style.color = scoreColors;
+
+            const html = `
+                <div class="feedback-block" style="border-left:4px solid ${scoreColors};">
+                    <h4 style="color:var(--primary);">📝 Resumen</h4>
+                    <p style="margin:0; color:#4a5568;">${r.resumen}</p>
+                </div>
+                <div style="display:grid; grid-template-columns:1fr 1fr; gap:1.25rem;">
+                    <div class="feedback-block" style="border-left:4px solid #276749;">
+                        <h4 style="color:#276749;">✅ Fortalezas</h4>
+                        <ul style="margin:0.5rem 0 0 1.2rem; color:#4a5568; padding:0;">
+                            ${(r.fortalezas || []).map(f => `<li style="margin-bottom:0.35rem;">${f}</li>`).join('')}
+                        </ul>
+                    </div>
+                    <div class="feedback-block" style="border-left:4px solid #d69e2e;">
+                        <h4 style="color:#b7791f;">🔧 Áreas de Mejora</h4>
+                        <ul style="margin:0.5rem 0 0 1.2rem; color:#4a5568; padding:0;">
+                            ${(r.mejoras || []).map(m => `<li style="margin-bottom:0.35rem;">${m}</li>`).join('')}
+                        </ul>
+                    </div>
+                </div>
+                ${r.conceptos_clave_faltantes?.length && r.conceptos_clave_faltantes[0] !== '' ? `
+                <div class="feedback-block" style="border-left:4px solid #c53030;">
+                    <h4 style="color:#c53030;">📌 Conceptos clave no mencionados</h4>
+                    <ul style="margin:0.5rem 0 0 1.2rem; color:#4a5568; padding:0;">
+                        ${r.conceptos_clave_faltantes.map(c => `<li style="margin-bottom:0.35rem;">${c}</li>`).join('')}
+                    </ul>
+                </div>` : ''}
+                <div class="feedback-block" style="border-left:4px solid var(--secondary);">
+                    <h4 style="color:var(--secondary);">🎓 Retroalimentación Pedagógica</h4>
+                    <p style="margin:0.5rem 0 0; color:#4a5568; line-height:1.7;">${r.retroalimentacion_detallada}</p>
+                </div>
+            `;
+
+            document.getElementById('feedback-content').innerHTML = html;
+            document.getElementById('analysis-result').style.display = 'block';
+            document.getElementById('analysis-result').scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+
+        function showError(msg) {
+            const el = document.getElementById('analysis-error');
+            el.textContent = msg;
+            el.style.display = 'block';
+        }
+
+        function clearAnswer() {
+            document.getElementById('student-answer').value = '';
+            document.getElementById('analysis-result').style.display = 'none';
+            document.getElementById('analysis-error').style.display = 'none';
+        }
+
+        function resetAnalysis() {
+            document.getElementById('student-answer').value = '';
+            document.getElementById('analysis-result').style.display = 'none';
+            document.getElementById('analysis-error').style.display = 'none';
+            document.getElementById('student-answer').focus();
+        }
+
+        function showTab(event, tabId) {
+            event.preventDefault();
+            document.querySelectorAll('.tab-content').forEach(tab => tab.classList.remove('active'));
+            document.querySelectorAll('.nav-item').forEach(item => item.classList.remove('active'));
+            document.getElementById(tabId).classList.add('active');
+            event.currentTarget.classList.add('active');
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+    </script>
+
+    <footer>
+        &copy; 2026 Proyecto de Ciencia Interdisciplinaria | Basado en principios de Difracción de Rayos X
+    </footer>
+</body>
+</html>
