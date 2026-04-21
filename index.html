@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Difracción de Rayos X | Ciencia Interdisciplinaria</title>
+    <title>X-Ray Diffraction | Interdisciplinary Science</title>
     <script>
         // Force trailing slash for GitHub Pages to fix relative image paths
         (function() {
@@ -154,7 +154,7 @@
             .nav-links { margin-top: 1rem; width: 100%; overflow-x: auto; padding-bottom: 0.5rem; }
         }
 
-        /* Modal specific styles added at the end of the original head */
+        /* Modal specific styles */
         @keyframes spin { to { transform: rotate(360deg); } }
         .question-card {
             background: #f8fafc;
@@ -180,29 +180,29 @@
         <div style="text-align:center;margin-bottom:1.5rem;">
             <div style="font-size:2.5rem;margin-bottom:0.5rem;">⚛️</div>
             <h2 style="font-size:1.5rem;color:#1a365d;margin:0 0 0.5rem;">Before we begin...</h2>
-            <p style="color:#718096;font-size:0.95rem;margin:0;">Take a moment to think about this before exploring the site.</p>
+            <p style="color:#718096;font-size:0.95rem;margin:0;">Take a moment to reflect on this before exploring the site.</p>
         </div>
         <div style="background:linear-gradient(135deg,#ebf8ff,#e9d8fd);border-radius:10px;padding:1.25rem 1.5rem;margin-bottom:1.5rem;border:1px solid #bee3f8;">
             <p style="color:#1a365d;font-weight:600;margin:0 0 0.5rem;font-size:0.9rem;text-transform:uppercase;letter-spacing:0.05em;">🤔 Quick Context</p>
-            <p style="color:#2d3748;margin:0;line-height:1.6;font-size:0.97rem;">X-ray crystallography lets scientists "see" how atoms are arranged inside materials — without ever touching a single atom. Before you explore how this actually works, we want to know: <strong>what do you think atoms look like and how do you imagine they are organized inside a solid material?</strong></p>
+            <p style="color:#2d3748;margin:0;line-height:1.6;font-size:0.97rem;">X-ray crystallography allows scientists to "see" the arrangement of atoms within materials without direct physical contact. Before you explore the underlying mechanisms, we would like to know: <strong>what is your current mental model of atoms, and how do you envision their organization within a solid material?</strong></p>
         </div>
         <label style="font-weight:600;color:#1a365d;display:block;margin-bottom:0.5rem;font-size:0.95rem;">✍️ Describe your mental image:</label>
-        <textarea id="initial-prediction" placeholder="e.g. I think atoms look like tiny balls arranged in neat rows, or maybe randomly scattered... I imagine they are held together by..." rows="5" style="width:100%;padding:1rem;border:1.5px solid #e2e8f0;border-radius:8px;font-size:0.93rem;font-family:inherit;line-height:1.6;resize:vertical;outline:none;transition:border 0.2s;box-sizing:border-box;" onfocus="this.style.borderColor='#2b6cb0'" onblur="this.style.borderColor='#e2e8f0'"></textarea>
-        <p style="font-size:0.8rem;color:#a0aec0;margin:0.4rem 0 1.25rem;">There are no wrong answers — this is just your honest first impression!</p>
+        <textarea id="initial-prediction" placeholder="e.g., I suspect atoms resemble minute spheres arranged in precise rows, or perhaps they are distributed randomly... I imagine they are bonded by..." rows="5" style="width:100%;padding:1rem;border:1.5px solid #e2e8f0;border-radius:8px;font-size:0.93rem;font-family:inherit;line-height:1.6;resize:vertical;outline:none;transition:border 0.2s;box-sizing:border-box;" onfocus="this.style.borderColor='#2b6cb0'" onblur="this.style.borderColor='#e2e8f0'"></textarea>
+        <p style="font-size:0.8rem;color:#a0aec0;margin:0.4rem 0 1.25rem;">There are no incorrect responses — we are interested in your initial impressions!</p>
         <button onclick="closePredictionModal()" style="width:100%;padding:0.85rem;background:#1a365d;color:white;border:none;border-radius:10px;font-weight:700;font-size:1rem;cursor:pointer;transition:background 0.2s;" onmouseover="this.style.background='#2b6cb0'" onmouseout="this.style.background='#1a365d'">
-            Let's explore! →
+            Begin exploration! →
         </button>
     </div>
 </div>
 
     <nav>
-        <div class="logo">Cristalografía de Rayos X</div>
+        <div class="logo">X-Ray Crystallography</div>
         <div class="nav-links">
-            <a href="#" class="nav-item active" onclick="showTab(event, 'home')">General</a>
-            <a href="#" class="nav-item" onclick="showTab(event, 'interdisciplinary')">Conceptos Interdisciplinares</a>
-            <a href="#" class="nav-item" onclick="showTab(event, 'tech')">Aportes</a>
-            <a href="#" class="nav-item" onclick="showTab(event, 'simulation')">Simulación</a>
-            <a href="#" class="nav-item" onclick="showTab(event, 'analysis')">Análisis IA</a>
+            <a href="#" class="nav-item active" onclick="showTab(event, 'home')">General Overview</a>
+            <a href="#" class="nav-item" onclick="showTab(event, 'interdisciplinary')">Interdisciplinary Concepts</a>
+            <a href="#" class="nav-item" onclick="showTab(event, 'tech')">Contributions</a>
+            <a href="#" class="nav-item" onclick="showTab(event, 'simulation')">Simulation</a>
+            <a href="#" class="nav-item" onclick="showTab(event, 'analysis')">AI Analysis</a>
         </div>
     </nav>
 
@@ -220,13 +220,13 @@
                         
                         <h3>Fundamental Actors</h3>
                         <ul>
-                            <li><strong>1895 - Wilhelm Röntgen:</strong> Discovers X-rays, although initially he did not know they could be used to study crystals.</li>
-                            <li><strong>1912 - Max von Laue:</strong> Had the brilliant idea that if atoms were ordered in a crystal, they would act as a diffraction grid for X-rays. This experiment confirmed both the wave nature of X-rays and the atomic structure of crystals.</li>
-                            <li><strong>1913 - The Braggs (Father and Son):</strong> William Henry and William Lawrence Bragg simplified the complex Law model by creating the <strong>Bragg's Law</strong>, allowing calculation of real atomic distances.</li>
+                            <li><strong>1895 - Wilhelm Röntgen:</strong> Discovered X-rays, although initially he did not know they could be used to study crystals.</li>
+                            <li><strong>1912 - Max von Laue:</strong> Formulated the hypothesis that if atoms were ordered within a crystal, they would function as a diffraction grating for X-rays. This experiment confirmed both the wave nature of X-rays and the atomic structure of crystals.</li>
+                            <li><strong>1913 - The Braggs (Father and Son):</strong> William Henry and William Lawrence Bragg simplified von Laue's complex model by establishing <strong>Bragg's Law</strong>, which enables the calculation of actual atomic distances.</li>
                         </ul>
                     </div>
                     <div class="media-container">
-                        <img src="diapositiva1.jpg" alt="Pioneros de la Cristalografía" style="max-width: 100%; border-radius: 12px; border: 1px solid var(--border);">
+                        <img src="diapositiva1.jpg" alt="Pioneers of Crystallography" style="max-width: 100%; border-radius: 12px; border: 1px solid var(--border);">
                     </div>
                 </div>
 
@@ -239,54 +239,54 @@
         
         <div id="interdisciplinary" class="tab-content">
             <header>
-                <h1>Conceptos Interdisciplinares</h1>
-                <p>Explorando la difracción de rayos X a través de diferentes disciplinas científicas.</p>
+                <h1>Interdisciplinary Concepts</h1>
+                <p>Exploring X-ray diffraction across various scientific disciplines.</p>
             </header>
 
             <div class="section-card">
-                <h2>Ciencias Biológicas y Químicas</h2>
+                <h2>Biological and Chemical Sciences</h2>
                 <div class="grid">
                     <div>
-                        <h3>La Estructura de la Vida</h3>
-                        <p>En biología, la DRX fue la clave para resolver el misterio del ADN. Al cristalizar moléculas biológicas, los científicos pueden determinar la posición de cada átomo.</p>
+                        <h3>The Structure of Life</h3>
+                        <p>In biology, X-ray diffraction (XRD) was the critical key to resolving the mystery of DNA. By crystallizing biological molecules, scientists can determine the precise position of every atom.</p>
                         
-                        <h3>Diferenciación de Fases</h3>
-                        <p>Químicamente, la DRX puede distinguir entre sustancias con la misma composición pero distinta estructura (polimorfismo). Por ejemplo, puede diferenciar entre el <strong>grafito</strong> y el <strong>diamante</strong>, ambos formados solo por carbono, pero con propiedades radicalmente distintas debido a su ordenamiento atómico.</p>
+                        <h3>Phase Differentiation</h3>
+                        <p>Chemically, XRD can distinguish between substances with identical compositions but different structures (polymorphism). For example, it can differentiate between <strong>graphite</strong> and <strong>diamond</strong>, both composed solely of carbon but possessing radically different properties due to their atomic arrangement.</p>
                     </div>
                     <div class="media-container">
-                        <img src="./graphite_vs_diamond.png" alt="Grafito vs Diamante" style="max-width: 100%; width: 100%; height: auto; border-radius: 8px;">
+                        <img src="./graphite_vs_diamond.png" alt="Graphite vs Diamond" style="max-width: 100%; width: 100%; height: auto; border-radius: 8px;">
                     </div>
                 </div>
             </div>
 
             <div class="section-card">
-                <h2>Física y Fundamentos Matemáticos</h2>
-                <p>Para que ocurra la difracción, la longitud de onda de la radiación debe ser similar a la distancia entre los átomos.</p>
+                <h2>Physics and Mathematical Foundations</h2>
+                <p>For diffraction to occur, the radiation's wavelength must be comparable to the distance between atoms.</p>
         
                 <div class="media-container" style="margin-bottom: 2rem; text-align: center;">
-                    <img src="braggs-law-xray-diffraction-crystal-260nw-2287289215.webp" alt="Esquema de la Ley de Bragg" style="max-width: 100%; height: auto; border-radius: 8px;">
+                    <img src="braggs-law-xray-diffraction-crystal-260nw-2287289215.webp" alt="Bragg's Law Schematic" style="max-width: 100%; height: auto; border-radius: 8px;">
                 </div>
 
                 <div class="math-card" style="border-left-color: var(--accent); margin: 2rem 0; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);">
-                    <h3 style="text-align: center;">Fórmula de la Distancia Interplanar ($d$)</h3>
+                    <h3 style="text-align: center;">Interplanar Distance Formula ($d$)</h3>
                     <div class="math-formula">
                         \( d_{hkl} = \frac{a}{\sqrt{h^2 + k^2 + l^2}} \)
                     </div>
-                    <p style="text-align: center; margin-bottom: 0;">Esta fórmula relaciona el espaciado <strong>d</strong> entre planos cristalinos paralelos con los índices de Miller <strong>(h, k, l)</strong> y el parámetro de red <strong>a</strong> en sistemas cúbicos.</p>
+                    <p style="text-align: center; margin-bottom: 0;">This formula relates the spacing <strong>d</strong> between parallel crystalline planes with the Miller indices <strong>(h, k, l)</strong> and the lattice parameter <strong>a</strong> in cubic systems.</p>
                 </div>
 
                 <div class="grid">
                     <div class="math-card">
-                        <h3>Ley de Bragg</h3>
-                        <p>Es la base matemática que explica cuándo los rayos dispersados por los átomos se refuerzan entre sí (interferencia constructiva).</p>
+                        <h3>Bragg's Law</h3>
+                        <p>It is the mathematical foundation explaining how rays scattered by atoms reinforce each other (constructive interference).</p>
                         <div class="math-formula">
                             \( n\lambda = 2d \sin(\theta) \)
                         </div>
                         <ul>
-                            <li><strong>n:</strong> Orden de reflexión (entero).</li>
-                            <li><strong>λ:</strong> Longitud de onda de los rayos X.</li>
-                            <li><strong>d:</strong> Distancia entre planos atómicos.</li>
-                            <li><strong>θ:</strong> Ángulo de incidencia.</li>
+                            <li><strong>n:</strong> Reflection order (integer).</li>
+                            <li><strong>λ:</strong> X-ray wavelength.</li>
+                            <li><strong>d:</strong> Distance between atomic planes.</li>
+                            <li><strong>θ:</strong> Angle of incidence.</li>
                         </ul>
                     </div>
                     <div class="media-container">
@@ -310,10 +310,10 @@
         
                 </div>
                 <div class="inferencia23">
-                    <h3>Interferencia Constructiva</h3>
-                    <p>Solo cuando se cumple la Ley de Bragg, las ondas que salen del cristal están "en fase" y crean un pico de intensidad que podemos medir. Si no se cumple, las ondas se anulan entre sí.</p>
+                    <h3>Constructive Interference</h3>
+                    <p>Only when Bragg's Law is satisfied are the waves exiting the crystal "in phase," producing a measurable intensity peak. If it is not met, the waves cancel each other out.</p>
                     <div class="math-card" style="border-left-color: var(--accent);">
-                        <p><strong>Dato Curioso:</strong> Los rayos X se usan porque su longitud de onda es tan pequeña que puede interactuar with el espacio vacío entre los átomos.</p>
+                        <p><strong>Scientific Note:</strong> X-rays are utilized because their wavelength is sufficiently small to interact with the atomic spacing.</p>
                     </div>
                 </div>
             </div>
@@ -321,58 +321,58 @@
 
         <div id="tech" class="tab-content">
             <div class="section-card">
-                <h2>Aportes Tecnológicos y Aplicaciones</h2>
-                <p>La DRX no solo ha sido fundamental para la ciencia básica, sino que también ha impulsado avances tecnológicos en diversos campos.</p>
+                <h2>Technological Contributions and Applications</h2>
+                <p>XRD has not only been fundamental to basic science but has also driven technological advancements across various fields.</p>
                 
-                <h3>Medicina</h3>
-                <p>En medicina, la DRX se utiliza para determinar la estructura de proteínas y enzimas, lo que es crucial para el diseño de fármacos. Por ejemplo, la estructura del virus del VIH fue resuelta usando esta técnica, lo que permitió el desarrollo de tratamientos efectivos.</p>
+                <h3>Medicine</h3>
+                <p>In medicine, XRD is employed to determine the structure of proteins and enzymes, which is essential for drug design. For instance, the structure of the HIV virus was resolved using this technique, facilitating the development of effective treatments.</p>
                 
-                <h3>Materiales</h3>
-                <p>En ingeniería de materiales, la DRX ayuda a caracterizar nuevos materiales como superconductores y semiconductores, permitiendo optimizar sus propiedades para aplicaciones específicas.</p>
+                <h3>Materials Engineering</h3>
+                <p>In materials engineering, XRD assists in characterizing new materials such as superconductors and semiconductors, enabling the optimization of their properties for specific applications.</p>
             </div>
         </div>
         <div id="simulation" class="tab-content">
             <div class="section-card">
-                <h2>Simulación Interactiva</h2>
-                <p>Próximamente: Una simulación interactiva que permitirá a los usuarios experimentar con la difracción de rayos X, ajustando parámetros como el ángulo de incidencia y la distancia entre planos atómicos para ver cómo afecta el patrón de difracción.</p>
+                <h2>Interactive Simulation</h2>
+                <p>Coming Soon: An interactive simulation that will allow users to experiment with X-ray diffraction by adjusting parameters such as the angle of incidence and interplanar distance to observe their effects on the diffraction pattern.</p>
             </div>
         </div>
 
         <div id="analysis" class="tab-content">
             <div class="section-card">
-                <h2>🔬 Reflexión: Predicción vs. Realidad Atómica</h2>
+                <h2>🔬 Reflection: Prediction vs. Atomic Reality</h2>
 
                 <div style="background:linear-gradient(135deg,#ebf8ff,#e9d8fd); border:1px solid #bee3f8; border-radius:12px; padding:1.5rem 2rem; margin-bottom:2rem;">
-                    <h3 style="margin-top:0; color:var(--primary); font-size:1.1rem;">🧠 ¿Qué se pide?</h3>
-                    <p style="margin-bottom:0; color:#2d3748;">Ahora que exploraste los datos de difracción, la Ley de Bragg y las estructuras cristalinas, es momento de comparar con tu predicción inicial: <strong>¿en qué se parece o diferencia la realidad atómica de lo que imaginaste?</strong></p>
+                    <h3 style="margin-top:0; color:var(--primary); font-size:1.1rem;">🧠 Objective</h3>
+                    <p style="margin-bottom:0; color:#2d3748;">Having explored diffraction data, Bragg's Law, and crystalline structures, compare these findings with your initial prediction: <strong>How does the atomic reality align with or differ from your prior conceptualization?</strong></p>
                 </div>
 
                 <div style="background:#1a365d; border-radius:12px; padding:1.75rem 2rem; margin-bottom:2rem; color:white;">
-                    <div style="font-size:0.8rem; letter-spacing:0.1em; text-transform:uppercase; opacity:0.7; margin-bottom:0.6rem;">Pregunta de Reflexión</div>
+                    <div style="font-size:0.8rem; letter-spacing:0.1em; text-transform:uppercase; opacity:0.7; margin-bottom:0.6rem;">Reflection Question</div>
                     <p style="margin:0; font-size:1.05rem; line-height:1.7; font-weight:500; color:white;">Based on your initial prediction, how does the actual atomic representation differ from what you imagined? Using the diffraction data and mathematical results obtained, justify why the structure of this substance is organized this way. Address any alternative perspectives you had before the simulation.</p>
                 </div>
 
                 <div id="prediction-recap" style="display:none; background:#f0fff4; border:1px solid #9ae6b4; border-radius:10px; padding:1.25rem 1.5rem; margin-bottom:1.5rem;">
-                    <div style="font-size:0.8rem; font-weight:700; color:#276749; text-transform:uppercase; letter-spacing:0.05em; margin-bottom:0.5rem;">📝 Tu predicción inicial</div>
+                    <div style="font-size:0.8rem; font-weight:700; color:#276749; text-transform:uppercase; letter-spacing:0.05em; margin-bottom:0.5rem;">📝 Your Initial Prediction</div>
                     <p id="prediction-recap-text" style="margin:0; color:#2d3748; font-style:italic;"></p>
                 </div>
 
                 <div id="answer-section">
-                    <label style="font-weight:600; color:var(--primary); display:block; margin-bottom:0.5rem;">✍️ Tu reflexión:</label>
-                    <textarea id="student-answer" placeholder="Describe cómo imaginabas la estructura atómica antes, cómo es en realidad según los datos de difracción, y por qué crees que se organiza así. Menciona la Ley de Bragg u otros conceptos matemáticos vistos..." rows="8" style="width:100%; padding:1rem; border:1px solid var(--border); border-radius:8px; font-size:0.95rem; font-family:inherit; line-height:1.6; resize:vertical; outline:none; transition:border 0.2s;" onfocus="this.style.borderColor='var(--secondary)'" onblur="this.style.borderColor='var(--border)'"></textarea>
+                    <label style="font-weight:600; color:var(--primary); display:block; margin-bottom:0.5rem;">✍️ Your Reflection:</label>
+                    <textarea id="student-answer" placeholder="Describe your prior conceptualization of atomic structure, how it compares to the reality revealed by diffraction data, and your reasoning for its organization. Incorporate Bragg's Law or other relevant mathematical concepts discussed..." rows="8" style="width:100%; padding:1rem; border:1px solid var(--border); border-radius:8px; font-size:0.95rem; font-family:inherit; line-height:1.6; resize:vertical; outline:none; transition:border 0.2s;" onfocus="this.style.borderColor='var(--secondary)'" onblur="this.style.borderColor='var(--border)'"></textarea>
                     <div style="display:flex; gap:1rem; margin-top:1rem; flex-wrap:wrap;">
                         <button onclick="analyzeAnswer()" id="analyze-btn" style="padding:0.75rem 2rem; background:var(--accent); color:white; border:none; border-radius:8px; font-weight:700; font-size:1rem; cursor:pointer; transition:all 0.2s;" onmouseover="this.style.background='#dd6b20'" onmouseout="this.style.background='var(--accent)'">
-                            ✨ Analizar con Gemini
+                            ✨ Analyze with Gemini
                         </button>
                         <button onclick="clearAnswer()" style="padding:0.75rem 1.25rem; background:transparent; color:var(--text-muted); border:1px solid var(--border); border-radius:8px; font-weight:600; cursor:pointer;">
-                            Limpiar
+                            Clear
                         </button>
                     </div>
                 </div>
 
                 <div id="analysis-loading" style="display:none; text-align:center; padding:3rem 1rem;">
                     <div style="display:inline-block; width:48px; height:48px; border:4px solid var(--border); border-top-color:var(--secondary); border-radius:50%; animation:spin 0.9s linear infinite;"></div>
-                    <p style="margin-top:1rem; color:var(--text-muted); font-weight:500;">Gemini está evaluando tu reflexión...</p>
+                    <p style="margin-top:1rem; color:var(--text-muted); font-weight:500;">Gemini is evaluating your reflection...</p>
                 </div>
 
                 <div id="analysis-result" style="display:none; margin-top:2rem;">
@@ -386,7 +386,7 @@
                     <div id="feedback-content" style="display:grid; gap:1.25rem;"></div>
                     <div style="text-align:center; margin-top:2rem;">
                         <button onclick="resetAnalysis()" style="padding:0.65rem 1.75rem; background:var(--secondary); color:white; border:none; border-radius:8px; font-weight:600; cursor:pointer;">
-                            🔄 Nueva reflexión
+                            🔄 New Reflection
                         </button>
                     </div>
                 </div>
@@ -414,26 +414,14 @@
             }
         }
 
-        function saveApiKey() {
-            const key = document.getElementById('gemini-api-key').value.trim();
-            if (!key || !key.startsWith('AIza')) {
-                document.getElementById('api-key-status').textContent = '⚠️ Ingresa una API key válida (debe comenzar con "AIza").';
-                document.getElementById('api-key-status').style.color = '#c53030';
-                return;
-            }
-            savedApiKey = key;
-            document.getElementById('api-key-status').textContent = '✅ API key guardada correctamente.';
-            document.getElementById('api-key-status').style.color = '#276749';
-        }
-
         async function analyzeAnswer() {
             if (!savedApiKey) {
-                showError('⚠️ Primero guarda tu API key de Gemini.');
+                showError('⚠️ Please save your Gemini API key first.');
                 return;
             }
             const answer = document.getElementById('student-answer').value.trim();
             if (answer.length < 30) {
-                showError('⚠️ Tu reflexión es muy corta. Escribe una explicación más completa comparando tu predicción con la realidad atómica.');
+                showError('⚠️ Your reflection is too brief. Please provide a more comprehensive explanation comparing your prediction with the atomic reality.');
                 return;
             }
 
@@ -443,26 +431,26 @@
             document.getElementById('analyze-btn').disabled = true;
 
             const predictionContext = initialPrediction
-                ? `PREDICCIÓN INICIAL DEL ESTUDIANTE (escrita antes de explorar el sitio): ${initialPrediction}\n\n`
+                ? `STUDENT'S INITIAL PREDICTION (written before exploring the platform): ${initialPrediction}\n\n`
                 : '';
 
-            const prompt = `Eres un profesor experto en cristalografía y difracción de rayos X. Evalúa la siguiente reflexión de un estudiante que acaba de explorar una web sobre difracción de rayos X.
+            const prompt = `You are an expert professor in crystallography and X-ray diffraction. Evaluate the following reflection from a student who has just explored a web platform about X-ray diffraction.
 
-PREGUNTA: ${THE_QUESTION}
+QUESTION: ${THE_QUESTION}
 
-${predictionContext}REFLEXIÓN DEL ESTUDIANTE: ${answer}
+${predictionContext}STUDENT REFLECTION: ${answer}
 
-El estudiante debe: (1) comparar su imagen mental previa de los átomos con la realidad estructural revelada por la difracción, (2) usar datos o conceptos matemáticos como la Ley de Bragg o los índices de Miller para justificar la organización atómica, y (3) reconocer perspectivas alternativas que tenía antes.
+The student is required to: (1) compare their prior mental image of atoms with the structural reality revealed by diffraction, (2) utilize data or mathematical concepts such as Bragg's Law or Miller indices to justify the atomic organization, and (3) acknowledge any alternative perspectives they held previously.
 
-Evalúa y responde ÚNICAMENTE con un objeto JSON válido (sin markdown, sin explicaciones extra) con esta estructura exacta:
+Evaluate and respond ONLY with a valid JSON object (no markdown, no additional explanations) using this exact structure:
 {
-  "score": <número del 0 al 10, puede tener un decimal>,
-  "nivel": "<Excelente|Muy Bueno|Bueno|Regular|Insuficiente>",
-  "resumen": "<2-3 oraciones resumiendo la calidad de la reflexión>",
-  "fortalezas": ["<fortaleza 1>", "<fortaleza 2>"],
-  "mejoras": ["<área de mejora 1>", "<área de mejora 2>"],
-  "conceptos_clave_faltantes": ["<concepto faltante, o dejar vacío si no faltan>"],
-  "retroalimentacion_detallada": "<párrafo de 3-5 oraciones con retroalimentación pedagógica profunda sobre la comparación predicción-realidad>"
+  "score": <number from 0 to 10, may include one decimal point>,
+  "level": "<Excellent|Very Good|Good|Fair|Insufficient>",
+  "summary": "<2-3 sentences summarizing the quality of the reflection>",
+  "strengths": ["<strength 1>", "<strength 2>"],
+  "improvements": ["<area for improvement 1>", "<area for improvement 2>"],
+  "missing_key_concepts": ["<missing concept, or leave empty if none>"],
+  "detailed_feedback": "<paragraph of 3-5 sentences with profound pedagogical feedback regarding the prediction-reality comparison>"
 }`;
 
             try {
@@ -481,21 +469,21 @@ Evalúa y responde ÚNICAMENTE con un objeto JSON válido (sin markdown, sin exp
                 const data = await response.json();
 
                 if (!response.ok) {
-                    const msg = data.error?.message || `Error HTTP ${response.status}`;
+                    const msg = data.error?.message || `HTTP Error ${response.status}`;
                     const status = data.error?.status || '';
                     throw new Error(`[${response.status} ${status}] ${msg}`);
                 }
 
                 const raw = data.candidates?.[0]?.content?.parts?.[0]?.text || '';
-                if (!raw) throw new Error('Gemini no devolvió contenido. Intenta de nuevo.');
+                if (!raw) throw new Error('Gemini returned no content. Please try again.');
                 const cleaned = raw.replace(/```json|```/g, '').trim();
                 let result;
                 try { result = JSON.parse(cleaned); }
-                catch(e) { throw new Error('No se pudo parsear la respuesta de Gemini. Intenta de nuevo.'); }
+                catch(e) { throw new Error('Could not parse Gemini\'s response. Please try again.'); }
                 renderResult(result);
 
             } catch (err) {
-                showError('❌ Error al conectar con Gemini: ' + err.message);
+                showError('❌ Error connecting to Gemini: ' + err.message);
             } finally {
                 document.getElementById('analysis-loading').style.display = 'none';
                 document.getElementById('analyze-btn').disabled = false;
@@ -513,39 +501,39 @@ Evalúa y responde ÚNICAMENTE con un objeto JSON válido (sin markdown, sin exp
             document.getElementById('score-number').textContent = score % 1 === 0 ? score : score.toFixed(1);
             document.getElementById('score-number').style.color = scoreColors;
 
-            const levelEmojis = { 'Excelente': '🏆', 'Muy Bueno': '⭐', 'Bueno': '👍', 'Regular': '📖', 'Insuficiente': '💪' };
-            document.getElementById('score-label').textContent = `${levelEmojis[r.nivel] || '📊'} ${r.nivel}`;
+            const levelEmojis = { 'Excellent': '🏆', 'Very Good': '⭐', 'Good': '👍', 'Fair': '📖', 'Insufficient': '💪' };
+            document.getElementById('score-label').textContent = `${levelEmojis[r.level] || '📊'} ${r.level}`;
             document.getElementById('score-label').style.color = scoreColors;
 
             const html = `
                 <div class="feedback-block" style="border-left:4px solid ${scoreColors};">
-                    <h4 style="color:var(--primary);">📝 Resumen</h4>
-                    <p style="margin:0; color:#4a5568;">${r.resumen}</p>
+                    <h4 style="color:var(--primary);">📝 Summary</h4>
+                    <p style="margin:0; color:#4a5568;">${r.summary}</p>
                 </div>
                 <div style="display:grid; grid-template-columns:1fr 1fr; gap:1.25rem;">
                     <div class="feedback-block" style="border-left:4px solid #276749;">
-                        <h4 style="color:#276749;">✅ Fortalezas</h4>
+                        <h4 style="color:#276749;">✅ Strengths</h4>
                         <ul style="margin:0.5rem 0 0 1.2rem; color:#4a5568; padding:0;">
-                            ${(r.fortalezas || []).map(f => `<li style="margin-bottom:0.35rem;">${f}</li>`).join('')}
+                            ${(r.strengths || []).map(f => `<li style="margin-bottom:0.35rem;">${f}</li>`).join('')}
                         </ul>
                     </div>
                     <div class="feedback-block" style="border-left:4px solid #d69e2e;">
-                        <h4 style="color:#b7791f;">🔧 Áreas de Mejora</h4>
+                        <h4 style="color:#b7791f;">🔧 Areas for Improvement</h4>
                         <ul style="margin:0.5rem 0 0 1.2rem; color:#4a5568; padding:0;">
-                            ${(r.mejoras || []).map(m => `<li style="margin-bottom:0.35rem;">${m}</li>`).join('')}
+                            ${(r.improvements || []).map(m => `<li style="margin-bottom:0.35rem;">${m}</li>`).join('')}
                         </ul>
                     </div>
                 </div>
-                ${r.conceptos_clave_faltantes?.length && r.conceptos_clave_faltantes[0] !== '' ? `
+                ${r.missing_key_concepts?.length && r.missing_key_concepts[0] !== '' ? `
                 <div class="feedback-block" style="border-left:4px solid #c53030;">
-                    <h4 style="color:#c53030;">📌 Conceptos clave no mencionados</h4>
+                    <h4 style="color:#c53030;">📌 Key Concepts Not Mentioned</h4>
                     <ul style="margin:0.5rem 0 0 1.2rem; color:#4a5568; padding:0;">
-                        ${r.conceptos_clave_faltantes.map(c => `<li style="margin-bottom:0.35rem;">${c}</li>`).join('')}
+                        ${r.missing_key_concepts.map(c => `<li style="margin-bottom:0.35rem;">${c}</li>`).join('')}
                     </ul>
                 </div>` : ''}
                 <div class="feedback-block" style="border-left:4px solid var(--secondary);">
-                    <h4 style="color:var(--secondary);">🎓 Retroalimentación Pedagógica</h4>
-                    <p style="margin:0.5rem 0 0; color:#4a5568; line-height:1.7;">${r.retroalimentacion_detallada}</p>
+                    <h4 style="color:var(--secondary);">🎓 Pedagogical Feedback</h4>
+                    <p style="margin:0.5rem 0 0; color:#4a5568; line-height:1.7;">${r.detailed_feedback}</p>
                 </div>
             `;
 
@@ -584,8 +572,7 @@ Evalúa y responde ÚNICAMENTE con un objeto JSON válido (sin markdown, sin exp
     </script>
 
     <footer>
-        &copy; 2026 Proyecto de Ciencia Interdisciplinaria | Basado en principios de Difracción de Rayos X
+        &copy; 2026 Interdisciplinary Science Project | Based on X-Ray Diffraction principles
     </footer>
 </body>
 </html>
-l>
