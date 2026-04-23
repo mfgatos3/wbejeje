@@ -141,131 +141,130 @@
 </div>
 
 <nav>
-    <div class="logo">CrystalMetrics</div>
-    <div class="nav-links">
-        <a href="#" class="nav-item active" onclick="showTab(event, 'world')">1. Invisible World</a>
-        <a href="#" class="nav-item" onclick="showTab(event, 'history')">2. History</a>
-        <a href="#" class="nav-item" onclick="showTab(event, 'engine')">3. Technical Engine</a>
-        <a href="#" class="nav-item" onclick="showTab(event, 'simulation')">4. Simulation</a>
-        <a href="#" class="nav-item" onclick="showTab(event, 'analysis')">5. AI Analysis</a>
-        <a href="#" class="nav-item" onclick="showTab(event, 'glossary')">6. Glossary</a>
-    </div>
+<div class="logo">CrystalMetrics</div>
+<div class="nav-links">
+    <a href="#" class="nav-item active" onclick="showTab(event, 'world')">1. Invisible World</a>
+    <a href="#" class="nav-item" onclick="showTab(event, 'history')">2. History</a>
+    <a href="#" class="nav-item" onclick="showTab(event, 'engine')">3. How it Works</a>
+    <a href="#" class="nav-item" onclick="showTab(event, 'simulation')">4. Simulation</a>
+    <a href="#" class="nav-item" onclick="showTab(event, 'analysis')">5. AI Analysis</a>
+    <a href="#" class="nav-item" onclick="showTab(event, 'glossary')">6. Glossary</a>
+</div>
 </nav>
 
 <main>
-    <!-- WORLD -->
-    <div id="world" class="tab-content active">
-        <header class="reveal">
-            <h1>The Invisible World</h1>
-            <p>Welcome, <span id="display-student-name">Explorer</span>. Before 1895, the internal world of matter was a complete mystery. Scientists could only speculate about how atoms were organized.</p>
-        </header>
-        <div class="section-card reveal">
-            <div class="grid">
-                <div>
-                    <h2>The Mission: Mapping Nature</h2>
-                    <p>Everything around you is built from trillions of tiny "LEGO bricks" called <a href="#term-atoms" class="wiki-link" onclick="jumpToTerm(event, 'term-atoms')">Atoms</a>. But they are so small that no normal microscope can ever see them. X-ray crystallography is the superpower that finally let us look inside.</p>
-                    
-                    <h3>Polymorphism: The Power of Shape</h3>
-                    <p>Why is a diamond the hardest material while graphite is so soft you can write with it? Both are made of 100% pure Carbon. The secret lies in their <a href="#term-polymorphism" class="wiki-link" onclick="jumpToTerm(event, 'term-polymorphism')">Polymorphism</a>.</p>
-                    <p>X-rays reveal that in a Diamond, atoms form a rigid 3D pyramid lattice, making it ultra-strong. In Graphite, atoms form flat, stackable sheets that slide over each other easily. The geometry defines the reality.</p>
-                </div>
-                <div class="image-wrapper">
-                    <img src="graphito vs diamante.png" alt="Graphite vs Diamond">
-                    <figcaption class="caption">Pyramids vs. Sheets: Same atoms, different destinies.</figcaption>
-                </div>
+<!-- WORLD -->
+<div id="world" class="tab-content active">
+    <header class="reveal">
+        <h1>The Invisible World</h1>
+        <p>Welcome, <span id="display-student-name">Explorer</span>. Before 1895, the internal world of matter was a complete mystery. Scientists could only speculate about how atoms were organized.</p>
+    </header>
+    <div class="section-card reveal">
+        <div class="grid">
+            <div>
+                <h2>The Mission: Mapping Nature</h2>
+                <p>Everything around you is built from trillions of tiny "LEGO bricks" called <a href="#term-atoms" class="wiki-link" onclick="jumpToTerm(event, 'term-atoms')">Atoms</a>. But they are so small that no normal microscope can ever see them. X-ray crystallography is the superpower that finally let us look inside.</p>
+
+                <h3>Polymorphism: The Power of Shape</h3>
+                <p>Why is a diamond the hardest material while graphite is so soft you can write with it? Both are made of 100% pure Carbon. The secret lies in their <a href="#term-polymorphism" class="wiki-link" onclick="jumpToTerm(event, 'term-polymorphism')">Polymorphism</a>.</p>
+                <p>X-rays reveal that in a Diamond, atoms form a rigid 3D pyramid lattice, making it ultra-strong. In Graphite, atoms form flat, stackable sheets that slide over each other easily. The geometry defines the reality.</p>
             </div>
-            <div class="grid reveal" style="margin-top: 3rem;">
-                <div class="image-wrapper">
-                    <img src="proteina.png" alt="Protein">
-                    <figcaption class="caption">Mapping the "lock" to design the "key."</figcaption>
-                </div>
-                <div>
-                    <h3>Precision Medicine & Global Impact</h3>
-                    <p>Knowing these 3D shapes is how we survive today. Through Precision Medicine, by mapping the exact 3D shape of a virus protein (its "locks"), scientists can design perfectly fitting chemical "keys" (drugs and vaccines).</p>
-                    <p>This technique is our primary weapon against diseases like COVID-19 and Cancer. We design solutions based on the map of the invisible.</p>
-                    <a href="#" class="nav-btn" onclick="showTab(event, 'history')">Explore History →</a>
-                </div>
+            <div class="image-wrapper">
+                <img src="graphito vs diamante.png" alt="Graphite vs Diamond">
+                <figcaption class="caption">Pyramids vs. Sheets: Same atoms, different destinies.</figcaption>
+            </div>
+        </div>
+        <div class="grid reveal" style="margin-top: 3rem;">
+            <div class="image-wrapper">
+                <img src="proteina.png" alt="Protein">
+                <figcaption class="caption">Mapping the "lock" to design the "key."</figcaption>
+            </div>
+            <div>
+                <h3>Precision Medicine & Global Impact</h3>
+                <p>Knowing these 3D shapes is how we survive today. Through Precision Medicine, by mapping the exact 3D shape of a virus protein (its "locks"), scientists can design perfectly fitting chemical "keys" (drugs and vaccines).</p>
+                <p>This technique is our primary weapon against diseases like COVID-19 and Cancer. We design solutions based on the map of the invisible.</p>
+                <a href="#" class="nav-btn" onclick="showTab(event, 'history')">Explore History →</a>
             </div>
         </div>
     </div>
+</div>
 
-    <!-- HISTORY -->
-    <div id="history" class="tab-content">
-        <header class="reveal"><h1>History & Legends</h1></header>
-        <div class="section-card reveal">
-            <div class="grid">
-                <div>
-                    <h2>The Timeline of Discovery</h2>
-                    <p>The journey to see the invisible was paved by accidental genius and mathematical brilliance.</p>
-                    <ul>
-                        <li style="margin-bottom: 1.5rem;"><strong>1895 - Wilhelm Röntgen:</strong> Working in a dark lab with cathode rays, he discovered an "invisible light" by accident. He called it "X" because it was an unknown variable. He famously captured "The Hand of Bertha," the first clinical X-ray. It took 15 minutes of radiation, and upon seeing her bones, she cried: <em>"I have seen my death."</em></li>
-                        <li style="margin-bottom: 1.5rem;"><strong>1912 - Max von Laue:</strong> He proved that crystals act as geometric <a href="#term-diffraction" class="wiki-link" onclick="jumpToTerm(event, 'term-diffraction')">diffraction gratings</a>, finally proving that atoms exist in organized grids.</li>
-                        <li style="margin-bottom: 1.5rem;"><strong>1913 - The Bragg Legacy:</strong> William and Lawrence Bragg simplified the math, linking bounce angles directly to atomic distance. Lawrence won the Nobel Prize at just 25 years old.</li>
-                    </ul>
-                </div>
-                <div class="image-wrapper">
-                    <img src="Wilhelm-Roentgen-1.png" alt="Roentgen">
-                    <figcaption class="caption">Röntgen and the variable "X".</figcaption>
-                </div>
+<!-- HISTORY -->
+<div id="history" class="tab-content">
+    <header class="reveal"><h1>History & Legends</h1></header>
+    <div class="section-card reveal">
+        <div class="grid">
+            <div>
+                <h2>The Timeline of Discovery</h2>
+                <p>The journey to see the invisible was paved by accidental genius and mathematical brilliance.</p>
+                <ul>
+                    <li style="margin-bottom: 1.5rem;"><strong>1895 - Wilhelm Röntgen:</strong> Working in a dark lab with cathode rays, he discovered an "invisible light" by accident. He called it "X" because it was an unknown variable. He famously captured "The Hand of Bertha," the first clinical X-ray. It took 15 minutes of radiation, and upon seeing her bones, she cried: <em>"I have seen my death."</em></li>
+                    <li style="margin-bottom: 1.5rem;"><strong>1912 - Max von Laue:</strong> He proved that crystals act as geometric <a href="#term-diffraction" class="wiki-link" onclick="jumpToTerm(event, 'term-diffraction')">diffraction gratings</a>, finally proving that atoms exist in organized grids.</li>
+                    <li style="margin-bottom: 1.5rem;"><strong>1913 - The Bragg Legacy:</strong> William and Lawrence Bragg simplified the logic, linking bounce angles directly to atomic distance. Lawrence won the Nobel Prize at just 25 years old.</li>
+                </ul>
             </div>
-            <div class="grid reveal" style="margin-top: 3rem;">
-                <div class="image-wrapper">
-                    <img src="60251254_photo-51-print-qp867-a4_2.jpg" alt="Photo 51">
-                    <figcaption class="caption"><a href="#term-photo51" class="wiki-link" onclick="jumpToTerm(event, 'term-photo51')">Photo 51</a>: The math of a spiral.</figcaption>
-                </div>
-                <div>
-                    <h3>1952 - Rosalind Franklin</h3>
-                    <p>She captured the legendary Photo 51. The specific "X" shape in that diffraction pattern was the mathematical signature of a spiral or helix. This single X-ray proved the structure of DNA and changed Biology forever.</p>
-                    <a href="#" class="nav-btn" onclick="showTab(event, 'engine')">How the Math works →</a>
-                </div>
+            <div class="image-wrapper">
+                <img src="Wilhelm-Roentgen-1.png" alt="Roentgen">
+                <figcaption class="caption">Röntgen and the variable "X".</figcaption>
+            </div>
+        </div>
+        <div class="grid reveal" style="margin-top: 3rem;">
+            <div class="image-wrapper">
+                <img src="60251254_photo-51-print-qp867-a4_2.jpg" alt="Photo 51">
+                <figcaption class="caption"><a href="#term-photo51" class="wiki-link" onclick="jumpToTerm(event, 'term-photo51')">Photo 51</a>: The geometry of a spiral.</figcaption>
+            </div>
+            <div>
+                <h3>1952 - Rosalind Franklin</h3>
+                <p>She captured the legendary Photo 51. The specific "X" shape in that diffraction pattern was the signature of a spiral or helix. This single X-ray proved the structure of DNA and changed Biology forever.</p>
+                <a href="#" class="nav-btn" onclick="showTab(event, 'engine')">Discover How it Works →</a>
             </div>
         </div>
     </div>
+</div>
 
-    <!-- ENGINE -->
-    <div id="engine" class="tab-content">
-        <header class="reveal"><h1>The Technical Engine</h1></header>
-        <div class="section-card reveal">
-            <h2>The 3 Steps of the Mathematical Engine</h2>
-            <p>How do we turn a pattern of dots into a 3D map? We use three critical mathematical steps.</p>
-            
+<!-- ENGINE -->
+<div id="engine" class="tab-content">
+    <header class="reveal"><h1>How We Decode the Patterns</h1></header>
+    <div class="section-card reveal">
+        <h2>The Logic Behind the Machine</h2>
+        <p>How do we turn a pattern of dots into a 3D map? We use three critical principles.</p>
+
+        <div class="math-card reveal">
+            <h3>Step 1: The Signal Finder (<a href="#term-braggs-law" class="wiki-link" onclick="jumpToTerm(event, 'term-braggs-law')">Bragg's Law</a>)</h3>
+            <p>This principle identifies <a href="#term-interference" class="wiki-link" onclick="jumpToTerm(event, 'term-interference')">Constructive Interference</a>—when light waves hit atoms and grow larger in perfect sync.</p>
+            <div class="math-formula">\( n\lambda = 2d \sin(\theta) \)</div>
+            <p>Here, 'd' represents the vertical distance between the flat atomic planes of the crystal.</p>
+        </div>
+
+        <div class="math-card reveal">
+            <h3>Step 2: The Spatial Map (Miller Indices)</h3>
+            <p>Once we have the distances, we need coordinates. We use h, k, l as 3D coordinates to define the "Unit Cell" or the basic box of the crystal.</p>
+            <div class="math-formula">\( d = \frac{a}{\sqrt{h^2+k^2+l^2}} \)</div>
+            <p>This tells us how tightly packed the atoms are within their geometric grid.</p>
+        </div>
+
+        <div class="grid">
             <div class="math-card reveal">
-                <h3>Step 1: The Signal Finder (<a href="#term-braggs-law" class="wiki-link" onclick="jumpToTerm(event, 'term-braggs-law')">Bragg's Law</a>)</h3>
-                <p>This formula identifies <a href="#term-interference" class="wiki-link" onclick="jumpToTerm(event, 'term-interference')">Constructive Interference</a>—when light waves hit atoms and grow larger in perfect sync.</p>
-                <div class="math-formula">\( n\lambda = 2d \sin(\theta) \)</div>
-                <p>Here, 'd' represents the vertical distance between the flat atomic planes of the crystal.</p>
+                <h3>Step 3a: Triangulation (<a href="#term-law-sines" class="wiki-link" onclick="jumpToTerm(event, 'term-law-sines')">Law of Sines</a>)</h3>
+                <div class="math-formula">\( \frac{a}{\sin(A)} = \frac{b}{\sin(B)} \)</div>
+                <p>If the crystal isn't a perfect cube, we use this to calculate missing lengths using the angles recorded by the detector.</p>
             </div>
-
             <div class="math-card reveal">
-                <h3>Step 2: The Spatial Map (Miller Indices)</h3>
-                <p>Once we have the distances, we need coordinates. We use h, k, l as 3D coordinates to define the "Unit Cell" or the basic box of the crystal.</p>
-                <div class="math-formula">\( d = \frac{a}{\sqrt{h^2+k^2+l^2}} \)</div>
-                <p>This tells us how tightly packed the atoms are within their geometric grid.</p>
+                <h3>Step 3b: The Atomic GPS (<a href="#term-law-cosines" class="wiki-link" onclick="jumpToTerm(event, 'term-law-cosines')">Law of Cosines</a>)</h3>
+                <div class="math-formula">\( c^2 = a^2 + b^2 - 2ab \cos(C) \)</div>
+                <p>This calculates absolute distances in complex, tilted, or non-90° lattices where standard geometry fails.</p>
             </div>
-
-            <div class="grid">
-                <div class="math-card reveal">
-                    <h3>Step 3a: Triangulation (<a href="#term-law-sines" class="wiki-link" onclick="jumpToTerm(event, 'term-law-sines')">Law of Sines</a>)</h3>
-                    <div class="math-formula">\( \frac{a}{\sin(A)} = \frac{b}{\sin(B)} \)</div>
-                    <p>If the crystal isn't a perfect cube, we use this to calculate missing lengths using the angles recorded by the detector.</p>
-                </div>
-                <div class="math-card reveal">
-                    <h3>Step 3b: The Atomic GPS (<a href="#term-law-cosines" class="wiki-link" onclick="jumpToTerm(event, 'term-law-cosines')">Law of Cosines</a>)</h3>
-                    <div class="math-formula">\( c^2 = a^2 + b^2 - 2ab \cos(C) \)</div>
-                    <p>This calculates absolute distances in complex, tilted, or non-90° lattices where standard geometry fails.</p>
-                </div>
-            </div>
-            <div style="text-align: center;"><a href="#" class="nav-btn" onclick="showTab(event, 'simulation')">Go to Simulation →</a></div>
         </div>
+        <div style="text-align: center;"><a href="#" class="nav-btn" onclick="showTab(event, 'simulation')">Go to Simulation →</a></div>
     </div>
+</div>
 
-    <!-- SIMULATION (UPDATED) -->
-    <div id="simulation" class="tab-content">
-        <div class="section-card reveal" style="text-align:center; padding: 0; height: 85vh; border-radius: 32px; overflow: hidden;">
-            <iframe src="https://mfgatos3.github.io/simulador/" style="width: 100%; height: 100%; border: none;"></iframe>
-        </div>
+<!-- SIMULATION (UPDATED) -->
+<div id="simulation" class="tab-content">
+    <div class="section-card reveal" style="text-align:center; padding: 0; height: 85vh; border-radius: 32px; overflow: hidden;">
+        <iframe src="https://mfgatos3.github.io/simulador/" style="width: 100%; height: 100%; border: none;"></iframe>
     </div>
-
+</div>
     <!-- RESTORED AI ANALYSIS - DO NOT MODIFY -->
     <div id="analysis" class="tab-content">
         <div class="section-card reveal">
@@ -306,18 +305,18 @@
         <header class="reveal"><h1>The Explorer's Dictionary</h1></header>
         <div class="section-card reveal">
             <div class="glossary-grid">
-                <div class="glossary-item" id="term-atoms"><span class="glossary-term">Atoms</span><p>Tiny blocks of the universe.</p> <p>💡 ELI-11: LEGO bricks too small to see.</p><button onclick="goBack()" class="back-btn">⮌ Return</button></div>
-                <div class="glossary-item" id="term-xray"><span class="glossary-term">X-Ray</span><p>Invisible light.</p> <p>💡 ELI-11: A camera that sees through skin.</p><button onclick="goBack()" class="back-btn">⮌ Return</button></div>
-                <div class="glossary-item" id="term-diffraction"><span class="glossary-term">Diffraction</span><p>Light bending.</p> <p>💡 ELI-11: Squeezing light through a crack.</p><button onclick="goBack()" class="back-btn">⮌ Return</button></div>
-                <div class="glossary-item" id="term-lattice"><span class="glossary-term">Crystal Lattice</span><p>Atomic grid.</p> <p>💡 ELI-11: Tidy stack of LEGOs.</p><button onclick="goBack()" class="back-btn">⮌ Return</button></div>
-                <div class="glossary-item" id="term-braggs-law"><span class="glossary-term">Bragg's Law</span><p>The math ruler for atoms. \( n\lambda = 2d \sin(\theta) \).</p><button onclick="goBack()" class="back-btn">⮌ Return</button></div>
-                <div class="glossary-item" id="term-rosalind-franklin"><span class="glossary-term">Rosalind Franklin</span><p>Master of Light. Brilliance behind DNA photo.</p><button onclick="goBack()" class="back-btn">⮌ Return</button></div>
-                <div class="glossary-item" id="term-photo51"><span class="glossary-term">Photo 51</span><p>DNA shadow signature. Proven life is a helix.</p><button onclick="goBack()" class="back-btn">⮌ Return</button></div>
-                <div class="glossary-item" id="term-interference"><span class="glossary-term">Interference</span><p>Waves meeting.</p> <p>💡 ELI-11: Ripples getting bigger or vanishing.</p><button onclick="goBack()" class="back-btn">⮌ Return</button></div>
-                <div class="glossary-item" id="term-polymorphism"><span class="glossary-term">Polymorphism</span><p>Shape shifting atoms. Graphite vs Diamond.</p><button onclick="goBack()" class="back-btn">⮌ Return</button></div>
-                <div class="glossary-item" id="term-wavelength"><span class="glossary-term">Wavelength</span><p>Step size of light waves.</p><button onclick="goBack()" class="back-btn">⮌ Return</button></div>
-                <div class="glossary-item" id="term-law-sines"><span class="glossary-term">Law of Sines</span><p>Finding distances via angles.</p><button onclick="goBack()" class="back-btn">⮌ Return</button></div>
-                <div class="glossary-item" id="term-law-cosines"><span class="glossary-term">Law of Cosines</span><p>Finding lengths in complex shapes.</p><button onclick="goBack()" class="back-btn">⮌ Return</button></div>
+                <div class="glossary-item" id="term-atoms"><span class="glossary-term">Atoms</span><p>The fundamental building blocks of matter.</p><button onclick="goBack()" class="back-btn">⮌ Return</button></div>
+                <div class="glossary-item" id="term-xray"><span class="glossary-term">X-Ray</span><p>High-energy electromagnetic radiation used to penetrate materials.</p><button onclick="goBack()" class="back-btn">⮌ Return</button></div>
+                <div class="glossary-item" id="term-diffraction"><span class="glossary-term">Diffraction</span><p>The bending of waves around obstacles or through apertures.</p><button onclick="goBack()" class="back-btn">⮌ Return</button></div>
+                <div class="glossary-item" id="term-lattice"><span class="glossary-term">Crystal Lattice</span><p>The orderly, repeating 3D arrangement of atoms in a solid.</p><button onclick="goBack()" class="back-btn">⮌ Return</button></div>
+                <div class="glossary-item" id="term-braggs-law"><span class="glossary-term">Bragg's Law</span><p>The mathematical relationship defining how X-rays are diffracted by crystal planes. \( n\lambda = 2d \sin(\theta) \).</p><button onclick="goBack()" class="back-btn">⮌ Return</button></div>
+                <div class="glossary-item" id="term-rosalind-franklin"><span class="glossary-term">Rosalind Franklin</span><p>The pioneering chemist whose X-ray diffraction images provided critical insights into the structure of DNA.</p><button onclick="goBack()" class="back-btn">⮌ Return</button></div>
+                <div class="glossary-item" id="term-photo51"><span class="glossary-term">Photo 51</span><p>The iconic X-ray diffraction image of DNA that revealed its helical structure.</p><button onclick="goBack()" class="back-btn">⮌ Return</button></div>
+                <div class="glossary-item" id="term-interference"><span class="glossary-term">Interference</span><p>The interaction of waves that overlap to form a resulting wave of greater or lower amplitude.</p><button onclick="goBack()" class="back-btn">⮌ Return</button></div>
+                <div class="glossary-item" id="term-polymorphism"><span class="glossary-term">Polymorphism</span><p>The ability of a solid material to exist in more than one crystalline form.</p><button onclick="goBack()" class="back-btn">⮌ Return</button></div>
+                <div class="glossary-item" id="term-wavelength"><span class="glossary-term">Wavelength</span><p>The distance between successive crests of a wave.</p><button onclick="goBack()" class="back-btn">⮌ Return</button></div>
+                <div class="glossary-item" id="term-law-sines"><span class="glossary-term">Law of Sines</span><p>A trigonometric principle relating the sides and angles of any triangle.</p><button onclick="goBack()" class="back-btn">⮌ Return</button></div>
+                <div class="glossary-item" id="term-law-cosines"><span class="glossary-term">Law of Cosines</span><p>A trigonometric principle relating the sides of a triangle to the cosine of one of its angles.</p><button onclick="goBack()" class="back-btn">⮌ Return</button></div>
             </div>
         </div>
     </div>
